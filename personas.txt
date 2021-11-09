@@ -2,8 +2,22 @@
 Blake Baker is a young adult, aged 22. He graduated from University of Puget Sound in 2019. However, due to a global pandemic, the job market has been run dry. His English degree has not afforded him many opportunities. Especially due to the pandemic, he has become lethargic and apathetic to his future. Blake has been spending most of his time on the internet playing games. 
 He heard of this new game on the market called Dungeons and Davids and is curious to see what all the hype is about. However, Blake has come across many dull and unentertaining games that give him no satisfaction, and he is looking for a game that has a variety of elements. 
 <- Richard Williams ->
-Richard Williams is an 89 year old retiree who lives in Derry, Ireland. He and his wife divorced in his early 40s, so he is currently living out retirement alone. Richard passes the time by going online. However, in order to not end up on the negative side of the internet, he likes to find internet games so he can stimulate his brain. Due to his age, and lack of social contact, playing internet games helps him to keep his wits going into old age.
-While Richard was searching the internet for new games to play, he stumbled upon Dungeons and Davids. Richard is a connoisseur of internet games, so he is a very critical of what he deems as entertaining. He wants to win all of the games to see how entertaining the game is.
+Richard Williams is an 89 year old retiree who lives in Derry, Ireland. He and his wife divorced in his early 40s, so he is currently living out retirement alone. 
+Richard passes the time by going online. However, in order to not end up on the negative side of the internet, he likes to find internet games so he can stimulate 
+his brain. Due to his age, and lack of social contact, playing internet games helps him to keep his wits going into old age.
+While Richard was searching the internet for new games to play, he stumbled upon Dungeons and Davids. Richard is a connoisseur of internet games, so he is a very 
+critical of what he deems as entertaining. He wants to win all of the games to see how entertaining the game is.
+// Scenario
+Richard occasionally visits the Senior Center down the street from his house, and the last time he visited, he was engrossed in playing bingo. As they were in the 
+middle of the game, he overheard some of the other elderly talking about this "hip" new game that has just been released. Intrigued by the game, Richard asks the 
+others what this game is called so that he can try out the game. The game is called Dungeons and Davids.
+He asked the others what makes this game so addictive, and they explain to him that the games are simple enough to catch on quickly. However, there is a variety of 
+games to keep you entertained for a while.
+As he bussed home, Richard was very excited to try out the game on his computer. He searches up the game and pressed start. 
+He particularly enjoyed that option to have a time limit, because he was able to turn off the time limit in the beginning to get used to playing the games. 
+However, over time he set up the time limit to challenge himself and finish the games quicker and quicker. He particularly found himself enjoying the games 
+because some of the games reminded himself of games he played growing up. The game was easy to use and simple to understand. 
+
 <- Hunter Smalls -> 
 Hunter Smalls is a 15-year-old with ADHD living in Lincoln, Nebraska. He likes videogames, dinosaurs, and trivia questions. He is an extremely condescending child and because of this, he has no friends. Now he spends all of his time online. He had an easy time at school when he was younger, but now that more work is expected, he has struggled to keep up. His parents reacted strongly to his scholastic struggles, and finally decided that spending 10+ 
 hours a day playing Destiny 2 and going on reddit was not the best use of his time. They set up a program on the computer that only lets Hunter access "educational websites" after 5pm. He still wants to learn things and have fun doing it, but social media are blocked. He found our website and enjoys the variety of games, both educational and not. He especially loves that he can boast to his parents about something he learned on the Jeopardy game.
