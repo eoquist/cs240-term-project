@@ -1,13 +1,30 @@
 <- Blake Baker -> 
 Blake Baker is a young adult, aged 22. He graduated from University of Puget Sound in 2019. However, due to a global pandemic, the job market has been run dry. His English degree has not afforded him many opportunities. Especially due to the pandemic, he has become lethargic and apathetic to his future. Blake has been spending most of his time on the internet playing games. 
 He heard of this new game on the market called Dungeons and Davids and is curious to see what all the hype is about. However, Blake has come across many dull and unentertaining games that give him no satisfaction, and he is looking for a game that has a variety of elements. 
+
+Scenario 
+Blake Baker, a young adult who is an avid online gamer, recently dicovered an online gaming site called Dungeons and Davids.
+In the past, he tends to particularly enjoy games that have more than one goal to achieve. Blake likes
+caviats and plot line in his games, and therefore is engrossed with the enviornment of Dungeons and Davids.
+
+Blake orginally heard of the game through a friend, who was had been playing it to pass some time during recent global events.
+He and his friend both love the game, however Blake is not the biggest fan of the time limit feature his parents activated.
+Blake's parents have been trying to limit his gaming, and were delighted to find out Dungeons and Davids implemented a parental control that limits how long the game can be played for.
+
+This feature allows a parent or gaurdian to set a certain amount of time the game can be played for. Once this time has elapsed, the game is
+then put behind a password wall. If the password is entered, the game can be revisted, but progress is started from the beginning.
+This feature is optional, so Blake is jealous that his friend's parents don't enforce its use.
+
+Although frustrated with the time limitations, Blake and his friends enjoy comparing and contrasting their experiences in the game, and have been telling the people they know about the game.
+
 <- Richard Williams ->
 Richard Williams is an 89 year old retiree who lives in Derry, Ireland. He and his wife divorced in his early 40s, so he is currently living out retirement alone. 
 Richard passes the time by going online. However, in order to not end up on the negative side of the internet, he likes to find internet games so he can stimulate 
 his brain. Due to his age, and lack of social contact, playing internet games helps him to keep his wits going into old age.
 While Richard was searching the internet for new games to play, he stumbled upon Dungeons and Davids. Richard is a connoisseur of internet games, so he is a very 
 critical of what he deems as entertaining. He wants to win all of the games to see how entertaining the game is.
-// Scenario
+
+ Scenario
 Richard occasionally visits the Senior Center down the street from his house, and the last time he visited, he was engrossed in playing bingo. As they were in the 
 middle of the game, he overheard some of the other elderly talking about this "hip" new game that has just been released. Intrigued by the game, Richard asks the 
 others what this game is called so that he can try out the game. The game is called Dungeons and Davids.
@@ -21,3 +38,24 @@ because some of the games reminded himself of games he played growing up. The ga
 <- Hunter Smalls -> 
 Hunter Smalls is a 15-year-old with ADHD living in Lincoln, Nebraska. He likes videogames, dinosaurs, and trivia questions. He is an extremely condescending child and because of this, he has no friends. Now he spends all of his time online. He had an easy time at school when he was younger, but now that more work is expected, he has struggled to keep up. His parents reacted strongly to his scholastic struggles, and finally decided that spending 10+ 
 hours a day playing Destiny 2 and going on reddit was not the best use of his time. They set up a program on the computer that only lets Hunter access "educational websites" after 5pm. He still wants to learn things and have fun doing it, but social media are blocked. He found our website and enjoys the variety of games, both educational and not. He especially loves that he can boast to his parents about something he learned on the Jeopardy game.
+
+Scenario
+Hunter woke up on his 16th Birthday and felt frustrated with the state of his life. 
+The day before, his school put on the Fitness benchmark tests and he lied and said he felt sick instead of doing the exercise. The Gym teacher caught him playing games on his phone in the locker room,
+instead of recuperating in the infirmary. He was put on academic probation, and his parents were notified.
+
+This only confirmed what Hunter's dad thought, that Hunter's struggles were due entirely to his internet usage, 
+and not social isolation or depression. His dad decided that Hunter would not be able to play Destiny or use his phone for non academic reasons until he got his homework done for the day.
+
+A couple days into the new regime, Hunter became overwhelmed and frustrated with his work. Unable to relax or distract himself with his games, he threw his calculator at full strength. 
+He left a huge dent in the wall, and Hunter's screen privilege's were taken away.
+
+Hunter suggests Dungeons&Davids as an alternative to violence or academic failure. Hunter's dad checks it out and is infatuated with the smooth interface, relaxing sounds, and educational value.
+Most valuable to Hunter's Dad is the time limit he can set up to cut Hunter off. By taking 15 Minute brain breaks, 
+Hunter is able to use his time more optimally, and his frustrations have subsided.
+
+Sometimes, Hunter wants to just play a game of Battleships or Snake for a little reset. In those cases, 
+he opens up the site and clicks on the Snake tapestry. When he's looking for a longer experience, he beats all the subgames and challenges DragonDavid for freedom in a duel of Jeopardy,
+and learns cool factoids along the way. Hunter loves to try to get higher and higher scores in each game, and tries to lower his time as much as possible. 
+He's even challenged his Dad to beat his scores,
+and they've bonded over their mutual love of Dungeons&Davids.
