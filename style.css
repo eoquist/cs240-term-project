@@ -7,3 +7,9 @@ body{
 #dungeon{
 background-image: "/images/dungeon.png";
 }
+
+/*
+    https://stackoverflow.com/questions/24990554/how-to-include-a-font-ttf-using-css
+    if we want to use a pixel font from this pack
+    otherwise, we can definitely create an img file or something instead
+*/
