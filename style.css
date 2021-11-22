@@ -20,15 +20,15 @@ body {
   position: absolute;
   top: 150px;
   left: 300px;
-  width: 15%;
-  height: 25%;
+  width: 7%;
+  height: 15%;
 }
 #torch2 {
   position: absolute;
   top: 150px;
   left: 900px;
-  width: 15%;
-  height: 25%;
+  width: 7%;
+  height: 15%;
 }
 #door-closed{
 position: absolute;
