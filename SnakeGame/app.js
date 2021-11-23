@@ -16,7 +16,7 @@ class Snake {
         // the direction being moved, held in an array where the first element is x and second is Y
         this.direction = [0,0]
 
-
+        this.hi = 0;
     }
 }
 
