@@ -4,7 +4,6 @@ body {
   width: 100%;
   height: 100%;
   background-color:aliceblue;
-
 }
 #dungeon {
   position: relative;
@@ -54,4 +53,31 @@ top: 190px;
   width: 100px;
   height: 100px;
   transform: rotate(67deg);
+}
+#paper1{
+  position: absolute;
+  top: 250px;
+  left: 250px;
+  width: 150px;
+  height: 150px;
+}
+#paper2 {
+  position: absolute;
+  top: 250px;
+  left: 1100px;
+  width: 150px;
+  height: 150px;
+}
+/*
+Currently doesnt work
+*/
+.interact {
+  outline: 1px solid #90dcff;
+  padding: 20px 20px;
+  border: 5px solid transparent;
+}
+.interact:hover {
+  outline: 0px solid transparent;
+  padding: 20px 20px;
+  border: 5px solid #90dcff;
 }
