@@ -40,3 +40,18 @@ position: absolute;
 left: 350px;
 top: 190px;
 }
+#puzzleL{
+  position: absolute;
+  top: 750px;
+  left: 1100px;
+  width: 100px;
+  height: 100px;
+}
+#puzzleR{
+  position: absolute;
+  top: 750px;
+  left: 100px;
+  width: 100px;
+  height: 100px;
+  transform: rotate(67deg);
+}
