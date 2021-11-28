@@ -3,13 +3,12 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  background-color:aliceblue;
-
+  background-color: aliceblue;
 }
 #dungeon {
   position: relative;
 }
-#web{
+#web {
   position: absolute;
   left: -15px;
   top: -30px;
@@ -26,17 +25,17 @@ body {
 #torch2 {
   position: absolute;
   top: 150px;
-  left: 900px;
+  left: 975px;
   width: 7%;
   height: 15%;
 }
-#door-closed{
-position: absolute;
-top: 208px;
-left: 600px;
+#door-closed {
+  position: absolute;
+  top: 208px;
+  left: 570px;
 }
-#door-open{
-position: absolute;
-left: 350px;
-top: 190px;
+#door-open {
+  position: absolute;
+  left: 320px;
+  top: 190px;
 }

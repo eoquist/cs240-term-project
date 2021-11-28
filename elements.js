@@ -15,14 +15,17 @@ if(door.getAttribute("src") == "images/door-close.png"){
 door.className = "dooropen";
 door.src = "images/door-open.png";
 door.style.position = "absolute";
-door.style.left = "350px";
-door.style.top = "180px"
+door.style.left = "276px";
+door.style.top = "109px"
+door.style.width= "1070px";
+door.style.heigth= "1070px";
 } else {
     door.className = "door-closed";
     door.src = "images/door-close.png";
     door.style.position = "absolute";
-    door.style.left = "600px";
+    door.style.left = "570px";
     door.style.top = " 208px";
-
+    door.style.width= "325px";
+    door.style.heigth= "325px";
 }
 })
