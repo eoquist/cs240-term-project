@@ -39,3 +39,10 @@ body {
   left: 320px;
   top: 190px;
 }
+#lock {
+  position: absolute;
+  left: 642px;
+  top: 510px;
+  width: 3%;
+  height: 7.5%;
+}
