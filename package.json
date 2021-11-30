@@ -1,0 +1,22 @@
+{
+  "name": "cs240-term-project",
+  "version": "1.0.0",
+  "description": "For: People searching for an entertaining way to spend some time.",
+  "main": "Trivia.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eoquist/cs240-term-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/eoquist/cs240-term-project/issues"
+  },
+  "homepage": "https://github.com/eoquist/cs240-term-project#readme",
+  "dependencies": {
+    "axios": "^0.24.0"
+  }
+}
