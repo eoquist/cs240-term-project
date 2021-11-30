@@ -26,6 +26,7 @@ game_start = true;
     door.style.top = " 208px";
 }
 })
+<<<<<<< HEAD
 function make_table(){
     var tbl = document.createElement("table");
     tbl.style.width = '100px';
@@ -51,3 +52,17 @@ tbl.style.left = "500px";
 tbl.style.top = "180px"
 tbl.style.backgroundColor = "white";
 }
+=======
+
+// Paper that rips one time if you click on it
+onetime(document.getElementById("paper1"), "click", "icons/paper1-ripped.png");
+onetime(document.getElementById("paper2"), "click", "icons/paper2-ripped.png");
+
+// taken from https://www.sitepoint.com/create-one-time-events-javascript/
+function onetime(node, type, imgToSwap) { // create a one-time event
+	node.addEventListener(type, function(e) { // create event
+        e.target.src = imgToSwap;
+		e.target.removeEventListener(e.type, arguments.callee); // remove event
+	});
+}
+>>>>>>> eadd9f8b7a2365aad86190f82852dbda9ea3ee5a
