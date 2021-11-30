@@ -16,10 +16,7 @@ document.getElementById("door").addEventListener("click", function(){
             node.style.setProperty("top","208px");
         }
 });
- 
-
 // SEPARATOR BETWEEN MAIN CODE AND FUNCTIONS ：）
-
 
  // taken from https://www.sitepoint.com/create-one-time-events-javascript/
  function onetime(node, type, srcToSwap) { // create a one-time event
