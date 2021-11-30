@@ -80,9 +80,6 @@ Currently doesnt work
   outline: 0px solid transparent;
   padding: 20px 20px;
   border: 5px solid #90dcff;
-<<<<<<< HEAD
-}
-=======
 }
 #lock {
   position: absolute;
@@ -99,4 +96,3 @@ Currently doesnt work
   height: auto;
   transform: rotate(70deg);
 }
->>>>>>> 992fdb0d87fd4be5331d695492cc7770d2623e59

@@ -1,18 +1,10 @@
 const axios = require("axios");
 let categories = document.querySelector("#categories")
-<<<<<<< HEAD
-document.querySelector("button")
-=======
-<<<<<<< HEAD
 document.querySelector("button")
 //Things to ask david
-//
+//Package for require
 
 let questions = 10;
-=======
-
->>>>>>> 992fdb0d87fd4be5331d695492cc7770d2623e59
->>>>>>> mitch
 //TODO Add button to start game and event listener for that
 //TODO Once game starts, make new html elements for the options, including 3(?) incorrect options and the correct but randomized order
 //TODO Give them a submit answer button that checks the selection is the same as the JSON objects correct answer
