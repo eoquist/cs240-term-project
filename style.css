@@ -53,8 +53,6 @@ top: 190px;
   width: 100px;
   height: 100px;
   transform: rotate(67deg);
-<<<<<<< HEAD
-=======
 }
 #paper1{
   position: absolute;
@@ -82,5 +80,4 @@ Currently doesnt work
   outline: 0px solid transparent;
   padding: 20px 20px;
   border: 5px solid #90dcff;
->>>>>>> testJS
 }
