@@ -44,5 +44,13 @@ body {
   left: 642px;
   top: 510px;
   width: 3%;
-  height: 7.5%;
+  height: 7%;
+}
+#key {
+  position: absolute;
+  left: 1100px;
+  top: 700px;
+  width: 3.5%;
+  height: auto;
+  transform: rotate(70deg);
 }
