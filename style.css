@@ -96,3 +96,8 @@ Currently doesnt work
   height: auto;
   transform: rotate(70deg);
 }
+#vortex {
+  position: absolute;
+  left: 450px;
+  top: 230px;
+}
