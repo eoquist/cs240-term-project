@@ -1,43 +1,72 @@
-var door_open = false;
-var door = document.getElementById("door-closed");
-/**
- * having a problem here, i want to be able to just toggle between CSS
- * class names on click event but for some reason it doesnt seem to be registering the
- * positioning in each class when i just change the class name, so right now its done manually
- * but is ugly
- */
-door.addEventListener("mouseup", function(){
-if(!door_open){
-    door_open = true;
-    return;
-}
-if(door.getAttribute("src") == "images/door-close.png"){
-door.className = "dooropen";
-door.src = "images/door-openv4.png";
-door.style.position = "absolute";
-door.style.left = "570px";
-door.style.top = "193px"
-door.style.width= "445px";
-door.style.heigth= "445px";
-} else {
-    door.className = "door-closed";
-    door.src = "images/door-close.png";
-    door.style.position = "absolute";
-    door.style.left = "570px";
-    door.style.top = " 208px";
-    door.style.width= "325px";
-    door.style.heigth= "325px";
-}
-})
+// essential is clickSwap but with added BS because otherwise it looks awful
+document.getElementById("door").addEventListener("click", function(){
+    let node = document.getElementById("door");
+    let src1 = "images/door-close.png";
+    let src2 = "images/door-openv4.png";
+        if(node.getAttribute("src") == src1){
+            node.src = src2; // set to open
+            node.style.setProperty("height","592px");
+            node.style.setProperty("left","563.5px");
+            node.style.setProperty("top","192.5px");
+        }
+        else{
+            node.src = src1; // close
+            node.style.setProperty("height","512px");
+            node.style.setProperty("left","570px");
+            node.style.setProperty("top","208px");
+        }
+});
+// SEPARATOR BETWEEN MAIN CODE AND FUNCTIONS ：）
 
-// Paper that rips one time if you click on it
-onetime(document.getElementById("paper1"), "click", "icons/paper1-ripped.png");
-onetime(document.getElementById("paper2"), "click", "icons/paper2-ripped.png");
+ // taken from https://www.sitepoint.com/create-one-time-events-javascript/
+ function onetime(node, type, srcToSwap) { // create a one-time event
+     node.addEventListener(type, function(e) { // create event
+         e.target.src = srcToSwap;
+         e.target.removeEventListener(e.type, arguments.callee); // remove event
+     });
+ }
+ function onetimeClickSwap(node, srcToSwap) {
+    node.addEventListener("click", function(e) { // create event
+        e.target.src = srcToSwap;
+        e.target.removeEventListener("click", arguments.callee); // remove event
+    });
+ }
+ function clickSwap(node, src1, src2) {
+    node.addEventListener("click", function(e){
+        if(node.getAttribute("src") == src1){
+            node.src = src2; 
+        }
+        else{
+            node.src = src1;
+        }
+    }
+    )}
 
-// taken from https://www.sitepoint.com/create-one-time-events-javascript/
-function onetime(node, type, imgToSwap) { // create a one-time event
-	node.addEventListener(type, function(e) { // create event
-        e.target.src = imgToSwap;
-		e.target.removeEventListener(e.type, arguments.callee); // remove event
-	});
+function allowDrop(ev){
+    ev.preventDefault();
+}
+function drag(ev) {
+    ev.dataTransfer.setData("text", ev.target.id);
+  }
+  
+async function drop(ev) {
+    ev.preventDefault();
+    let node = document.getElementById("door");
+    let src2 = "images/door-openv4.png";
+    node.src = src2; // set to open
+    node.style.setProperty("height","592px");
+    node.style.setProperty("left","563.5px");
+    node.style.setProperty("top","192.5px");
+    document.querySelector("#lock").src = "images/open-lock.png";
+    await removeImg(document.querySelector("#lock"),500);
+    await removeImg(document.querySelector("#key"),0);
+}
+
+function removeImg(ele, delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            ele.parentNode.removeChild(ele);
+            resolve(); // promise is resolved
+        }, delay);
+    });
 }

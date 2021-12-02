@@ -30,16 +30,19 @@ body {
   width: 7%;
   height: 15%;
 }
-#door-closed {
+#door {
   position: absolute;
   top: 208px;
   left: 570px;
   z-index: 2;
 }
-#door-open {
+#key {
   position: absolute;
-  left: 320px;
-  top: 190px;
+  left: 1100px;
+  top: 700px;
+  width: 3.5%;
+  height: auto;
+  transform: rotate(70deg);
 }
 #puzzleL {
   position: absolute;
@@ -70,38 +73,21 @@ body {
   width: 150px;
   height: 150px;
 }
-/*
-Currently doesnt work
-*/
-.interact {
-  outline: 1px solid #90dcff;
-  padding: 20px 20px;
-  border: 5px solid transparent;
-}
-.interact:hover {
-  outline: 0px solid transparent;
-  padding: 20px 20px;
-  border: 5px solid #90dcff;
-}
 #lock {
   position: absolute;
   left: 642px;
   top: 510px;
   width: 3%;
   height: 7%;
-}
-#key {
-  position: absolute;
-  left: 1100px;
-  top: 700px;
-  width: 3.5%;
-  height: auto;
-  transform: rotate(70deg);
+  z-index: 3;
 }
 #oval-vortex {
   position: absolute;
-  left: 600px;
-  top: 3290px;
-  width: 20%;
+  top: 220px;
+  left: 580px;
+  height: 55%;
   z-index: 1;
+}
+.interact:hover {
+  filter: drop-shadow(0px 3px 3px #000000); /* right, bottom, top*/
 }
