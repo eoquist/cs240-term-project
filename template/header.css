@@ -1,0 +1,46 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color:aliceblue;
+  }
+  #dungeon {
+    position: relative;
+    z-index: 1;
+  }
+  #vortex{
+    position: absolute;
+    top: 255px;
+    left: 618px;
+    height: 400px;
+    z-index: 2;
+  }
+  #door{
+    position: absolute;
+    top: 208px;
+    left: 570px;
+    z-index: 3;
+  }
+  .textbox {
+    height: 100vh;
+    /*This part is important for centering*/
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .speech {
+    width: 22ch;
+    animation: typing 2s steps(22), step-end;
+    white-space: nowrap;
+    overflow: hidden;
+    font-family: monospace;
+    font-size: 2em;
+  }
+  
+  @keyframes typing {
+    from {
+      width: 0
+    }
+  }
