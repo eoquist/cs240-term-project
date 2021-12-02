@@ -11,8 +11,9 @@ body {
   }
   #vortex{
     position: absolute;
-    top: 208px;
-    left: 570px;
+    top: 255px;
+    left: 618px;
+    height: 400px;
     z-index: 2;
   }
   #door{
