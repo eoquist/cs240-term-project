@@ -31,27 +31,18 @@ function drag(ev) {
   
 async function drop(ev) {
     ev.preventDefault();
+    document.querySelector("#lock").src = "images/open-lock.png";
+    await removeImg(document.querySelector("#lock"),700);
+    await removeImg(document.querySelector("#key"),0);
     let node = document.getElementById("door");
     let src2 = "images/door-openv4.png";
     node.src = src2; // set to open
     node.style.setProperty("height","592px");
     node.style.setProperty("left","563.5px");
     node.style.setProperty("top","192.5px");
-    document.querySelector("#lock").src = "images/open-lock.png";
-    await removeImg(document.querySelector("#lock"),500);
-    await removeImg(document.querySelector("#key"),0);
 }
 
 function removeImg(ele, delay){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            ele.parentNode.removeChild(ele);
-            resolve(); // promise is resolved
-        }, delay);
-    });
-}
-
-function displayMessage(theMessage,ele, delay){
     return new Promise((resolve) => {
         setTimeout(() => {
             ele.parentNode.removeChild(ele);
