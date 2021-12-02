@@ -7,6 +7,7 @@ body {
 }
 #dungeon {
   position: relative;
+  z-index: 0;
 }
 #web {
   position: absolute;
@@ -33,6 +34,7 @@ body {
   position: absolute;
   top: 208px;
   left: 570px;
+  z-index: 2;
 }
 #door-open {
   position: absolute;
@@ -96,8 +98,10 @@ Currently doesnt work
   height: auto;
   transform: rotate(70deg);
 }
-#vortex {
+#oval-vortex {
   position: absolute;
-  left: 450px;
-  top: 230px;
+  left: 600px;
+  top: 3290px;
+  width: 20%;
+  z-index: 1;
 }

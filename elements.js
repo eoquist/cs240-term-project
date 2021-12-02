@@ -13,12 +13,12 @@ if(!door_open){
 }
 if(door.getAttribute("src") == "images/door-close.png"){
 door.className = "dooropen";
-door.src = "images/door-open.png";
+door.src = "images/door-openv4.png";
 door.style.position = "absolute";
-door.style.left = "276px";
-door.style.top = "109px"
-door.style.width= "1070px";
-door.style.heigth= "1070px";
+door.style.left = "570px";
+door.style.top = "193px"
+door.style.width= "445px";
+door.style.heigth= "445px";
 } else {
     door.className = "door-closed";
     door.src = "images/door-close.png";
