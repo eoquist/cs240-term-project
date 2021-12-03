@@ -1,25 +1,53 @@
 const axios = require("axios");
 let categories = document.querySelector("#categories")
-<<<<<<< HEAD
-let questions = 10;
-=======
 let playing = false;
-let button = document.querySelector("#button")
+let button = document.querySelector("button")
 button.addEventListener("mouseup", () =>{
     if (!playing){
         playing = true;
         startGame();
+        
+
     }
+fade_in_david(400);
 })
-//Things to ask david
-//Package for require
+function sleep(d){
+    return new Promise((resolve)=> setTimeout(resolve, d));
+   }
+
+async function fade_in_david(ms){
+var david = document.createElement("img");
+david.src = "images/Davidwizard.png";
+david.style.opacity = 0;
+document.getElementById("trivia_table").appendChild(david);
+david.style.position = "absolute";
+david.style.top= "150px";
+var op = parseFloat(0);
+let cont = false;
+
+var david_greeting = new Audio("/sfx/Old Man Sound Effects/This is Your Final Warning.wav").play();
+var timer = setInterval(function(){
+ if(op >= 1.0){
+     clearInterval(timer);
+     cont = true;
+     david.remove();
+ }
+ op += 0.2;
+ david.style.opacity = op;
+},ms);
+
+}
+
+
+
+
+
+
+
+
 
 let questionNum = 10;
->>>>>>> 04b7e7e4706c444941349e80f1b066584801a2bc
-//TODO Add button to start game and event listener for that
-//TODO Once game starts, make new html elements for the options, including 3(?) incorrect options and the correct but randomized order
-//TODO Give them a submit answer button that checks the selection is the same as the JSON objects correct answer
-//TODO Display basic Congratulations message
+
 
 async function startGame(){
     let questionsFlag = await getQuestions();
@@ -27,12 +55,12 @@ async function startGame(){
     let table = document.createElement('table');
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
-
+    document.getElementById("trivia_table").appendChild(table);
     table.appendChild(thead);
     table.appendChild(tbody);
-    document.getElementById('body').appendChild(table);
+   
     makeTable(table, thead, tbody);
-    document.getElementById('question').innerHTML = questionsFlag.data[0].question;
+   // document.getElementById('question').innerHTML = questionsFlag.data[0].question;
 }
 
 function makeTable(table, thead, tbody){
@@ -140,7 +168,7 @@ async function getQuestions(){
         return obj;
     } else {
         let obj = await getQuestionsSpec(categories.value);
-        return obj
+        return obj;
     }
 }
 
@@ -152,7 +180,8 @@ async function getQuestionsAny(){
         return response;
     } catch(err) {
         alert(err)
-        return;}}
+        return;
+    }}
 //Function that grabs the questions of a specific category from the api and returns a JSON object       
 async function getQuestionsSpec(cate){
         try{
@@ -161,7 +190,8 @@ async function getQuestionsSpec(cate){
             return response;
         } catch(err) {
             alert(err)
-            return;}}     
+            return;
+        }}     
         
 
 
