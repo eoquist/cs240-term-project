@@ -14,7 +14,9 @@ document.getElementById("door").addEventListener("click", function(){
             node.style.setProperty("left","570px");
             node.style.setProperty("top","208px");
         } 
-});// taken from https://www.sitepoint.com/create-one-time-events-javascript/
+});
+
+// taken from https://www.sitepoint.com/create-one-time-events-javascript/
  function onetime(node, type, srcToSwap) { // create a one-time event
     node.addEventListener(type, function(e) { // create event
         e.target.src = srcToSwap;

@@ -50,9 +50,9 @@ body {
       width: 0
     }
   }
-  .draggable {
+  /* .draggable {
     visibility: none;
-  }
+  } */
   /* hitbox-esque */
   .draggable:hover{
     filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
