@@ -40,7 +40,8 @@ var timer = setInterval(function(){
 }
 
 async function startGame(){
-    //let questionsFlag = await getQuestions();
+    let questionsFlag =  getQuestions();
+    console.log(questionsFlag);
     let table = document.createElement('table');
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
@@ -49,8 +50,7 @@ async function startGame(){
     document.getElementById("trivia_table").appendChild(table);
 
     makeTable(table, thead, tbody);
-    //document.getElementById('question').innerHTML = questionsFlag.data[0].question;
-  // console.log(questionsFlag);
+    document.getElementById('question').innerHTML = questionsFlag.data[0].question;
     console.log(table);
 }
 
@@ -170,7 +170,7 @@ async function getQuestionsAny(){
         let response = await axios.get(endpoint);
         return response;
     } catch(err) {
-        alert(err)
+        console(err)
         return;
     }}
 //Function that grabs the questions of a specific category from the api and returns a JSON object       
