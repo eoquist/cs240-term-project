@@ -1,0 +1,1 @@
+console.error("Error: Parsing file /Users/madisonforman/cs240-term-project/Trivia.js: Unexpected token (3:2)");

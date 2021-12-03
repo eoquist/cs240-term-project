@@ -1,7 +1,5 @@
 var door_open = false;
 var door = document.getElementById("door-closed");
-var game_start = false;
-const API = "https://trivia.willfry.co.uk/example";
 
 
 
@@ -15,7 +13,7 @@ door.src = "images/door-open.png";
 door.style.position = "absolute";
 door.style.left = "350px";
 door.style.top = "180px"
-} else{
+} else {
 location.pathname = "trivia.html";
 //     door.src = "images/door-close.png";
 //     door.style.position = "absolute";
