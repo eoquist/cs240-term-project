@@ -1,28 +1,21 @@
-body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    background-color:aliceblue;
-  }
-  #dungeon {
-    position: relative;
-    z-index: 1;
-  }
-  #vortex{
-    position: absolute;
-    top: 255px;
-    left: 618px;
-    height: 400px;
-    z-index: 2;
-  }
-  #door{
-    position: absolute;
-    top: 208px;
-    left: 570px;
-    z-index: 3;
-  }
-  /* hitbox-esque */
-  .interact:hover {
-    filter: drop-shadow(3px 0px 3px #90dcff); /* right, bottom, top*/
-  }
+.brew {
+  position: absolute;
+  top: 208px;
+  left: 570px;
+  height: 75px;
+  z-index: 3;
+}
+#chest {
+  position: absolute;
+  top: 600px;
+  left: 1100px;
+  height: 200px;
+  z-index: 3;
+}
+/* img[name="blue_potion"]{
+  position: absolute;
+  top: 208px;
+  left: 570px;
+  height: 75px;
+  z-index: 3;
+} */

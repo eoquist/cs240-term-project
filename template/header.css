@@ -22,20 +22,12 @@ body {
     left: 570px;
     z-index: 3;
   }
-  #potion{
-    position: absolute;
-    top: 208px;
-    left: 570px;
-    height: 75px;
-    z-index: 3;
-  }
   .textbox {
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
   }
-  
   .speech {
     width: 22ch;
     animation: typing 2s steps(22), step-end;
@@ -44,20 +36,14 @@ body {
     font-family: monospace;
     font-size: 2em;
   }
-  
+
   @keyframes typing {
     from {
       width: 0
     }
   }
-  /* .draggable {
-    visibility: none;
-  } */
-  /* hitbox-esque */
   .draggable:hover{
     filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
-    position: relative;
-    display: inline-block;
   }
 /* TAKEN FROM https://www.w3schools.com/css/css_tooltip.asp
       .tooltip .tooltiptext {
