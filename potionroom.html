@@ -9,9 +9,11 @@
     <img id = "door" class = "interact" src = "images/door-close.png">
     <img id = "vortex" src = "images/vortexv2.gif">
     <img id = "chest" src = "icons\chest-large.png">
-    <audio loop autoplay>
-        <source src="sounds\273_Arcane_Clockworks.mp3" type="audio/mp3"/>
-    </audio>
+    <div id = audio_div>
+        <!-- <audio loop autoplay>
+            <source src="sounds\273_Arcane_Clockworks.mp3" type="audio/mp3"/>
+        </audio> -->
+    </div>
     <!-- Draggable Elements: TODO == organize in a table "shelf" --> 
     <img id = "blue_potion" class = "draggable brew potion" value = "Click one to pick up, click again to set down." src = "icons\potion1-blue.png">
     <img id = "green_potion" class = "draggable brew potion" value = "Click one to pick up, click again to set down." src = "icons\potion1-green.png">
@@ -29,5 +31,6 @@
     <img id = "water_vial" class = "draggable brew vial" value = "Click one to pick up, click again to set down." src = "icons\potion4-water.png">
     <img id = "empty_vial" class = "draggable brew vial" value = "Click one to pick up, click again to set down." src = "icons\potion4-empty.png">
     <script src = "template/header.js"></script>
+    <script src = "potionbrewing.js"></script>
 </body>
 </html>

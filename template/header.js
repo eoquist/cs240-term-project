@@ -7,6 +7,7 @@ document.getElementById("door").addEventListener("click", function(){
             node.style.setProperty("height","590px");
             node.style.setProperty("left","563.5px");
             node.style.setProperty("top","193px");
+            // play portal sounds == (new Audio("sfx/8bit-SFX-Library/Environment/ufo.wav"));
         }
         else{
             node.src = src1; // close
