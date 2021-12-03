@@ -1,15 +1,16 @@
 const axios = require("axios");
-let categories = document.querySelector("#categories")
+let categories = document.getElementById("categories")
 let playing = false;
-let button = document.querySelector("button")
+let button = document.querySelector("button");
+let questionNum = 10;
 button.addEventListener("mouseup", () =>{
+    console.log("clicked");
     if (!playing){
         playing = true;
+        console.log("starting");
         startGame();
-        
-
     }
-fade_in_david(400);
+    fade_in_david(400);
 })
 function sleep(d){
     return new Promise((resolve)=> setTimeout(resolve, d));
@@ -38,29 +39,19 @@ var timer = setInterval(function(){
 
 }
 
-
-
-
-
-
-
-
-
-let questionNum = 10;
-
-
 async function startGame(){
-    let questionsFlag = await getQuestions();
-
+    //let questionsFlag = await getQuestions();
     let table = document.createElement('table');
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
-    document.getElementById("trivia_table").appendChild(table);
     table.appendChild(thead);
     table.appendChild(tbody);
-   
+    document.getElementById("trivia_table").appendChild(table);
+
     makeTable(table, thead, tbody);
-   // document.getElementById('question').innerHTML = questionsFlag.data[0].question;
+    //document.getElementById('question').innerHTML = questionsFlag.data[0].question;
+  // console.log(questionsFlag);
+    console.log(table);
 }
 
 function makeTable(table, thead, tbody){

@@ -1,16 +1,17 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 const axios = require("axios");
-let categories = document.querySelector("#categories")
+let categories = document.getElementById("categories")
 let playing = false;
-let button = document.querySelector("button")
+let button = document.querySelector("button");
+let questionNum = 10;
 button.addEventListener("mouseup", () =>{
+    console.log("clicked");
     if (!playing){
         playing = true;
+        console.log("starting");
         startGame();
-        
-
     }
-fade_in_david(400);
+    fade_in_david(400);
 })
 function sleep(d){
     return new Promise((resolve)=> setTimeout(resolve, d));
@@ -39,29 +40,19 @@ var timer = setInterval(function(){
 
 }
 
-
-
-
-
-
-
-
-
-let questionNum = 10;
-
-
 async function startGame(){
-    let questionsFlag = await getQuestions();
-
+    //let questionsFlag = await getQuestions();
     let table = document.createElement('table');
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
-    document.getElementById("trivia_table").appendChild(table);
     table.appendChild(thead);
     table.appendChild(tbody);
-   
+    document.getElementById("trivia_table").appendChild(table);
+
     makeTable(table, thead, tbody);
-   // document.getElementById('question').innerHTML = questionsFlag.data[0].question;
+    //document.getElementById('question').innerHTML = questionsFlag.data[0].question;
+  // console.log(questionsFlag);
+    console.log(table);
 }
 
 function makeTable(table, thead, tbody){
