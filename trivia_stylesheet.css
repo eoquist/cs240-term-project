@@ -1,0 +1,25 @@
+body{
+background-image: url("images/trivia-bckgrnd.png");
+}
+
+label{
+ color: white;
+}
+.container{
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Amiga Forever', sans-serif;
+    text-shadow: 0 0 8px #000;
+    
+}
+button{
+    font-family: 'Amiga Forever', sans-serifs;
+    background-color: tomato;
+    color: #ffca38;
+    
+}
+select{
+    font-family: 'Amiga Forever', sans-serifs;
+    background-color: white;
+    
+}
