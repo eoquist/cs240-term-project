@@ -14,9 +14,8 @@ button.addEventListener("mouseup", () =>{
 //Package for require
 
 let questionNum = 10;
-//TODO Add button to start game and event listener for that
-//TODO Once game starts, make new html elements for the options, including 3(?) incorrect options and the correct but randomized order
-//TODO Give them a submit answer button that checks the selection is the same as the JSON objects correct answer
+//TODO Keep track of questionNum and compare it to questions answered
+//make a tally of right and wrong answers
 //TODO Display basic Congratulations message
 
 async function startGame(){
