@@ -1,7 +1,9 @@
 const axios = require("axios");
+var questionsFlag;
 let categories = document.querySelector("#categories")
 let playing = false;
 let button = document.querySelector("#button")
+let rounds = 0;
 button.addEventListener("mouseup", () =>{
     if (!playing){
         playing = true;
@@ -18,7 +20,7 @@ let questionNum = 10;
 //TODO Display basic Congratulations message
 
 async function startGame(){
-    let questionsFlag = await getQuestions();
+    questionsFlag = await getQuestions();
 
     let table = document.createElement('table');
     let thead = document.createElement('thead');
@@ -28,7 +30,48 @@ async function startGame(){
     table.appendChild(tbody);
     document.getElementById('body').appendChild(table);
     makeTable(table, thead, tbody);
-    document.getElementById('question').innerHTML = questionsFlag.data[0].question;
+    makeQs(questionsFlag);
+    
+    
+}
+
+function getAnswerOrder(wrong, right){
+    let spots = [1,2,3,4]
+    for (let i = 0; i < 3; i++){
+        let chosenSpot =  spots.splice(Math.floor(Math.random()*spots.length), 1)
+        let place = document.getElementById(`Ans${chosenSpot[0]}`)
+        place.innerHTML = wrong[i];
+        place.addEventListener("mouseup", () =>{
+            wrongAns();
+        })
+        chosenSpot[0] = 0;
+    }
+    document.getElementById(`Ans${spots[0]}`).innerHTML = right;
+    document.getElementById(`Ans${spots[0]}`).addEventListener("mouseup", () =>{
+        rightAns();
+    })
+}
+function makeQs(questionsFlag){
+    document.getElementById('question').innerHTML = questionsFlag.data[rounds].question;
+    let wrong = getWrongAnswers(questionsFlag.data[rounds].incorrectAnswers)
+    getAnswerOrder(wrong, questionsFlag.data[rounds].correctAnswer)
+}
+function getWrongAnswers(array){
+    let temp = []
+    for (let i = 0; i < 3; i++){
+        let selected = array.splice(Math.floor(Math.random()*array.length), 1)
+        temp[i] = selected[0]
+        selected[0] = 0;
+    }
+    return temp;
+}
+function wrongAns(){
+    console.alert("Wrong one");
+}
+function rightAns(){
+    rounds++;
+    makeQs(questionsFlag);
+
 }
 
 function makeTable(table, thead, tbody){
