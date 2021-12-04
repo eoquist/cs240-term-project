@@ -7,7 +7,9 @@ document.getElementById("door").addEventListener("click", function(){
             node.style.setProperty("height","590px");
             node.style.setProperty("left","563.5px");
             node.style.setProperty("top","193px");
-            // play portal sounds == (new Audio("sfx/8bit-SFX-Library/Environment/ufo.wav"));
+            // play portal sounds
+            var audio = new Audio("sfx/8bit-SFX-Library/Environment/ufo.wav");
+            audio.play();
         }
         else{
             node.src = src1; // close
@@ -15,6 +17,32 @@ document.getElementById("door").addEventListener("click", function(){
             node.style.setProperty("left","570px");
             node.style.setProperty("top","208px");
         } 
+});
+
+// 0x1f508 off, 0x1f509 medium, 0x1f50a high
+const bg = new Audio('sounds/273_Arcane_Clockworks.mp3').play();
+// TODO MAKE SURE THAT BG ISNT UNDEFINIED
+// ???????????????????????????????????????????????????????????????????????????????????????????
+document.getElementById("sound_button").addEventListener("click", function(){
+    var vol_emote = document.getElementById("sound_button").textContent.trim(), //just the emote
+        off = String.fromCodePoint(0x1f508),
+        medium = String.fromCodePoint(0x1f509),
+        high = String.fromCodePoint(0x1f50a);
+    if(vol_emote == high){
+        document.getElementById("sound_button").innerHTML = off // set off
+        console.log('muted');
+        this.bg.sound = 0.0;
+    }
+    else if(vol_emote == off){
+        document.getElementById("sound_button").innerHTML = medium // set medium
+        console.log('medium');
+        this.bg.volume = 0.5;
+    }
+    else{
+        document.getElementById("sound_button").innerHTML = high // set high
+        console.log('high');
+        this.bg.volume = 1.0;
+    }
 });
 
 // taken from https://www.sitepoint.com/create-one-time-events-javascript/

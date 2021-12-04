@@ -22,6 +22,13 @@ body {
     left: 570px;
     z-index: 3;
   }
+  #sound_button {
+    position: absolute;
+    top: -50px;
+    left: 10px;
+    font-size: 50px;
+    z-index: 3;
+  }
   .textbox {
     height: 100vh;
     display: flex;
