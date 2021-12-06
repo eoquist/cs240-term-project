@@ -38,8 +38,8 @@ body {
 }
 #key {
   position: absolute;
-  left: 1100px;
-  top: 700px;
+  left: 800px;
+  top: 800px;
   width: 3.5%;
   height: auto;
   transform: rotate(70deg);
@@ -75,7 +75,7 @@ body {
 }
 #lock {
   position: absolute;
-  left: 642px;
+  left: 637px;
   top: 510px;
   width: 3%;
   height: 7%;
@@ -90,4 +90,16 @@ body {
 }
 .interact:hover {
   filter: drop-shadow(0px 3px 3px #000000); /* right, bottom, top*/
+}
+#chest {
+  position: absolute;
+  top: 540px;
+  left: 990px;
+  height: 25%;
+}
+.mbar {
+  padding: 5px;
+  margin: 5px;
+  background: #eee;
+  border: 1px solid #aaa;
 }

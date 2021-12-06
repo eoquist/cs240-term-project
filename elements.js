@@ -1,3 +1,4 @@
+ let body = document.querySelector("body");
  // taken from https://www.sitepoint.com/create-one-time-events-javascript/
  function onetime(node, type, srcToSwap) { // create a one-time event
      node.addEventListener(type, function(e) { // create event
@@ -32,7 +33,11 @@ function drag(ev) {
 async function drop(ev) {
     ev.preventDefault();
     document.querySelector("#lock").src = "images/open-lock.png";
-    await removeImg(document.querySelector("#lock"),700);
+    document.querySelector("#lock").height = "5%";
+    await enlarge(document.querySelector("#lock"),"6%",60);
+    await enlarge(document.querySelector("#lock"),"7%",60);
+    await enlarge(document.querySelector("#lock"),"8%",60);
+    await removeImg(document.querySelector("#lock"),1000);
     await removeImg(document.querySelector("#key"),0);
     let node = document.getElementById("door");
     let src2 = "images/door-openv4.png";
@@ -50,3 +55,40 @@ function removeImg(ele, delay){
         }, delay);
     });
 }
+function enlarge(ele,height,delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            ele.style.setProperty("height",height);
+            resolve(); // promise is resolved
+        }, delay);
+    });
+}
+
+function message(ele,message,delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            ele.innerHTML = message;    
+            resolve(); // promise is resolved
+        }, delay);
+    });
+}
+
+document.querySelector("#chest").addEventListener("click", async function(){
+    let node = document.getElementById("chest");
+    node.src = "images/open-chest.png";
+    node.style.setProperty("height","43%");
+    node.style.setProperty("left","890px");
+    node.style.setProperty("top","460px");
+});
+
+// (B) MESSAGE BAR
+function mbar (msg, css) {
+    // (B1) CREATE BAR
+    var bar = document.createElement("div");
+    bar.innerHTML = msg;
+    bar.classList.add("mbar");
+    if (css) { bar.classList.add(css); }
+   
+    // (B3) APPEND TO CONTAINER
+    document.getElementById("mbar").appendChild(bar);
+  }
