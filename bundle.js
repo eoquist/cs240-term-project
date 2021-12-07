@@ -265,6 +265,7 @@ function getAnswerOrder(wrong, right){
 function makeQs(questionsFlag){
     document.getElementById(`cata`).innerHTML = questionsFlag.data[rounds].category
     document.getElementById('question').innerHTML = questionsFlag.data[rounds].question;
+    document.getElementById("qnum").innerHTML = `#${totalQs + 1}`
     let wrong = getWrongAnswers(questionsFlag.data[rounds].incorrectAnswers)
     getAnswerOrder(wrong, questionsFlag.data[rounds].correctAnswer)
 }
@@ -304,8 +305,8 @@ function makeTable(table, thead, tbody){
     heading_2.id = "cata";
 
     let heading_3 = document.createElement('th');
-    heading_3.innerHTML = "Question";
-
+    heading_3.id = "qnum";
+    heading_3.colSpan = 5;
 
     row_1.appendChild(heading_1);
     row_1.appendChild(heading_2);
@@ -326,6 +327,7 @@ function makeTable(table, thead, tbody){
 
     row_2.appendChild(row_2_data_1);
     row_2.appendChild(row_2_data_2);
+
     row_2.appendChild(row_2_data_3);
     tbody.appendChild(row_2);
 
