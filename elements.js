@@ -82,13 +82,35 @@ document.querySelector("#chest").addEventListener("click", async function(){
 });
 
 // (B) MESSAGE BAR
-function mbar (msg, css) {
-    // (B1) CREATE BAR
-    var bar = document.createElement("div");
-    bar.innerHTML = msg;
-    bar.classList.add("mbar");
-    if (css) { bar.classList.add(css); }
+async function mbar (msg, css, delay1,delay2) {
+    return new Promise((resolve) => {
+        setTimeout(async () => {
+            // (B1) CREATE BAR
+            var bar = document.createElement("div");
+            bar.innerHTML = msg;
+            bar.classList.add("mbar");
+            if (css) { bar.classList.add(css); }
    
-    // (B3) APPEND TO CONTAINER
-    document.getElementById("mbar").appendChild(bar);
+            // (B3) APPEND TO CONTAINER
+            document.getElementById("mbar").appendChild(bar);
+            resolve(); // promise is resolved
+            await remBar(bar,delay2);
+        }, delay1);
+    });
   }
+
+  function remBar(bar,delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            document.getElementById("mbar").removeChild(bar); 
+            resolve(); // promise is resolved
+        }, delay);
+    });
+  }
+
+
+let chest = document.getElementById("chest");
+chest.addEventListener("click", async function(){
+    await mbar('Oh... there is nothing in there...','mbar',0,3000);
+    await mbar('WAIT! I see something!!!','mbar',3000,2000);
+});

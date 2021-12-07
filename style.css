@@ -20,15 +20,15 @@ body {
   position: absolute;
   top: 150px;
   left: 300px;
-  width: 7%;
-  height: 15%;
+  width: 100px;
+  height: 120px;
 }
 #torch2 {
   position: absolute;
   top: 150px;
   left: 975px;
-  width: 7%;
-  height: 15%;
+  width: 100px;
+  height: 120px;
 }
 #door {
   position: absolute;
@@ -40,8 +40,8 @@ body {
   position: absolute;
   left: 800px;
   top: 800px;
-  width: 3.5%;
-  height: auto;
+  width: 50px;
+  height: 50px;
   transform: rotate(70deg);
 }
 #puzzleL {
@@ -77,15 +77,15 @@ body {
   position: absolute;
   left: 637px;
   top: 510px;
-  width: 3%;
-  height: 7%;
+  width: 50px;
+  height: 60px;
   z-index: 3;
 }
 #oval-vortex {
   position: absolute;
   top: 210px;
   left: 577px;
-  height: 55%;
+  height: 500px;
   z-index: 1;
 }
 .interact:hover {
@@ -102,4 +102,7 @@ body {
   margin: 5px;
   background: #eee;
   border: 1px solid #aaa;
+  position: absolute;
+  z-index: 3;
+  left: 600px;
 }
