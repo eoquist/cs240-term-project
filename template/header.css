@@ -24,10 +24,10 @@ body {
   }
   #sound_button {
     position: absolute;
-    top: -50px;
+    top: 10px;
     left: 10px;
-    font-size: 50px;
-    z-index: 3;
+    height: 75px;
+    z-index: 4;
   }
   .textbox {
     height: 100vh;

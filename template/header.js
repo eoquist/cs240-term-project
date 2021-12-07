@@ -20,28 +20,25 @@ document.getElementById("door").addEventListener("click", function(){
 });
 
 // 0x1f508 off, 0x1f509 medium, 0x1f50a high
-const bg = new Audio('sounds/273_Arcane_Clockworks.mp3').play();
+const bg = new Audio('sounds/273_Arcane_Clockworks.mp3');
+bg.play();
 // TODO MAKE SURE THAT BG ISNT UNDEFINIED
 // ???????????????????????????????????????????????????????????????????????????????????????????
+// alternative-- use text icon // String.fromCodePoint(0x1f508 || 0x1f509 || 0x1f50a)
+// con: .textContent.trim() and there are issues with accidentally highlighting
 document.getElementById("sound_button").addEventListener("click", function(){
-    var vol_emote = document.getElementById("sound_button").textContent.trim(), //just the emote
-        off = String.fromCodePoint(0x1f508),
-        medium = String.fromCodePoint(0x1f509),
-        high = String.fromCodePoint(0x1f50a);
-    if(vol_emote == high){
-        document.getElementById("sound_button").innerHTML = off // set off
+    var vol_isOn = true;
+    if(vol_isOn){
+        document.getElementById("sound_button").src = 'icons/speaker-low-vol.png'; // set off
         console.log('muted');
-        this.bg.sound = 0.0;
-    }
-    else if(vol_emote == off){
-        document.getElementById("sound_button").innerHTML = medium // set medium
-        console.log('medium');
-        this.bg.volume = 0.5;
+        vol_isOn = false;
+        bg.volume = 0.0;
     }
     else{
-        document.getElementById("sound_button").innerHTML = high // set high
+        document.getElementById("sound_button").src = 'icons/speaker-high-vol.png'; // set high
         console.log('high');
-        this.bg.volume = 1.0;
+        vol_isOn = true;
+        bg.volume = 0.5;
     }
 });
 
