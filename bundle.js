@@ -197,7 +197,8 @@ let playing = false;
 let button = document.querySelector("#button")
 //list of rounds
 let rounds = 0;
-//
+let hitPoints = 5;
+let totalQs = 0;
 button.addEventListener("mouseup", () =>{
     if (!playing){
         playing = true;
@@ -279,12 +280,18 @@ function getWrongAnswers(array){
     return temp;
 }
 function wrongAns(){
-    alert("Wrong one");
+    if (hitPoints > 0){ hitPoints--;
+    alert(`Wrong one, ${hitPoints} lives left`);}
+    else alert("ya died")
+    
 }
 function rightAns(){
-    rounds++;
-    if (rounds < questionNum)makeQs(questionsFlag);
-    else alert("nicejob")
+    if (hitPoints > 0)
+    {rounds++;
+    totalQs++;
+    if (rounds < questionNum){makeQs(questionsFlag);alert(`${totalQs} questions answered`)}
+    else alert("you did it")}
+    else alert("ya dead")
 
 }
 
@@ -314,8 +321,8 @@ function makeTable(table, thead, tbody){
     let row_2_data_2 = document.createElement('td');
  
     let row_2_data_3 = document.createElement('td');
-    row_2_data_3.innerHTML = "FillerQ";
-    row_2_data_3.id = "question";
+    row_2_data_2.innerHTML = "FillerQ";
+    row_2_data_2.id = "question";
 
     row_2.appendChild(row_2_data_1);
     row_2.appendChild(row_2_data_2);
@@ -330,14 +337,14 @@ function makeTable(table, thead, tbody){
     let row_3_data_2 = document.createElement('td');
     row_3_data_2.innerHTML = "Answer1";
     row_3_data_2.id = "Ans1"
-/*     let row_3_data_3 = document.createElement('td');
+/*  let row_3_data_3 = document.createElement('td');
     row_3_data_3.innerHTML = "Select button";
     row_3_data_3.id = "op1" */
 
 
     row_3.appendChild(row_3_data_1);
     row_3.appendChild(row_3_data_2);
-//    row_3.appendChild(row_3_data_3);
+//  row_3.appendChild(row_3_data_3);
     tbody.appendChild(row_3);
 
     let row_4 = document.createElement('tr');
@@ -346,14 +353,14 @@ function makeTable(table, thead, tbody){
     let row_4_data_2 = document.createElement('td');
     row_4_data_2.innerHTML = "Answer2";
     row_4_data_2.id = "Ans2"
-/*     let row_4_data_3 = document.createElement('td');
+/*   let row_4_data_3 = document.createElement('td');
     row_4_data_3.innerHTML = "Select button";
     row_4_data_3.id = "op2"
  */
 
     row_4.appendChild(row_4_data_1);
     row_4.appendChild(row_4_data_2);
-//    row_4.appendChild(row_4_data_3);
+//  row_4.appendChild(row_4_data_3);
     tbody.appendChild(row_4);
 
     let row_5 = document.createElement('tr');
