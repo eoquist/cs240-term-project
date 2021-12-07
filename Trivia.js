@@ -118,7 +118,7 @@ function makeTable(table, thead, tbody){
 
     let heading_3 = document.createElement('th');
     heading_3.innerHTML = "Question";
-
+    heading_3.colSpan = 5;
 
     row_1.appendChild(heading_1);
     row_1.appendChild(heading_2);
@@ -139,6 +139,7 @@ function makeTable(table, thead, tbody){
 
     row_2.appendChild(row_2_data_1);
     row_2.appendChild(row_2_data_2);
+
     row_2.appendChild(row_2_data_3);
     tbody.appendChild(row_2);
 
