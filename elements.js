@@ -129,3 +129,4 @@ var subProblem = {
 };
 // Generate 5 addition questions and 5 subtraction questions
 var questions = problems.generateQuestions([additionProblem, subtractionProblem], [5,5]);
+console.log(questions);
