@@ -2,13 +2,13 @@
 <head>
     <link rel = "stylesheet" href = "trivia_stylesheet.css">
 </head>
-<body>
+<body id = "body">
     <style>
         @import url('http://fonts.cdnfonts.com/css/amiga-forever');
     </style> 
 <div class="container">
     <label for="categories">Choose a Category:</label>
-        <select name="categories">
+        <select id ="categories" name="categories">
         <option value="All">All</option>
         <option value="food_and_drink">Food and Drink</option>
         <option value="geography">Geography</option>
@@ -21,7 +21,8 @@
         <option value="Society and Culture">Society and Culture</option>
         <option value="Sports">Sports</option>
         </select>
-    <button> Start! </button>
+    <button id=button> Start! </button>
+    <script src = "bundle.js"></script>
     </div>
    
 </body>    
