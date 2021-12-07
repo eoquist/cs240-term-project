@@ -114,3 +114,18 @@ chest.addEventListener("click", async function(){
     await mbar('Oh... there is nothing in there...','mbar',0,3000);
     await mbar('WAIT! I see something!!!','mbar',3000,2000);
 });
+
+var problems = require('maths-problems');
+
+var addProblem = {
+  "question" : "What is {x=randomInt(1,15)} + {y=randomInt(1,15)}?",
+  "answer" : ["{x}+{y}"],
+  "answerFormat" : "0"
+};
+var subProblem = {
+  "question" : "What is {x=randomInt(1,15)} - {y=randomInt(1,15)}?",
+  "answer" : ["{x}-{y}"],
+  "answerFormat" : "0"
+};
+// Generate 5 addition questions and 5 subtraction questions
+var questions = problems.generateQuestions([additionProblem, subtractionProblem], [5,5]);
