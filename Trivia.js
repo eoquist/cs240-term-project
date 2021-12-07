@@ -127,11 +127,12 @@ function makeTable(table, thead, tbody){
     let row_2_data_2 = document.createElement('td');
  
     let row_2_data_3 = document.createElement('td');
-    row_2_data_3.innerHTML = "FillerQ";
-    row_2_data_3.id = "question";
+    row_2_data_2.innerHTML = "FillerQ";
+    row_2_data_2.id = "question";
 
     row_2.appendChild(row_2_data_1);
     row_2.appendChild(row_2_data_2);
+
     row_2.appendChild(row_2_data_3);
     tbody.appendChild(row_2);
 
