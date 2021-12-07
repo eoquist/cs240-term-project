@@ -1,5 +1,10 @@
 body{
 background-image: url("images/trivia-bckgrnd.png");
+color: white;
+text-align: center;
+font-size: 20px;
+font-family: 'Amiga Forever', sans-serif;
+text-shadow: 0 0 8px #000;
 }
 
 label{
@@ -22,4 +27,7 @@ select{
     font-family: 'Amiga Forever', sans-serifs;
     background-color: white;
     
+}
+.table{
+    background-color: black;
 }
