@@ -1,6 +1,12 @@
 var problems = require('maths-problems');
 var body = document.querySelector('body');
 
+async function beginning(){
+    await mbar('','math-game',0,1700);
+}
+
+beginning();
+
  // taken from https://www.sitepoint.com/create-one-time-events-javascript/
  function onetime(node, type, srcToSwap) { // create a one-time event
      node.addEventListener(type, function(e) { // create event
