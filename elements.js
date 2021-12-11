@@ -1,6 +1,7 @@
 var problems = require('maths-problems');
 var body = document.querySelector('body');
 
+
 async function beginning(){
     await mbar('Hahahaha! You\'ve fallen into my trap! If you\'re smart enough, you will be able to leave this room. BUT I don\'t think you are...','beginning','beginning-remarks',0,7000);
     await mbar('Try your best to figure out how to leave this room!','beginning','beginning-remarks',7000,5000);
@@ -32,6 +33,7 @@ beginning();
         }
     }
     )}
+
 
 // MESSAGE BAR
 async function mbar (msg, css, div, delay1,delay2) {
@@ -105,7 +107,7 @@ async function mbar (msg, css, div, delay1,delay2) {
     table.appendChild(input);
     input.placeholder = "Input your answer here";
     var numQ = document.createElement("tr");
-    var score = 10;
+    var score = 1;
     numQ.innerHTML = "You have " + score + " questions left";
     table.appendChild(numQ);
     var timer = document.createElement('tr');

@@ -2,6 +2,14 @@
 <head>
     <link rel = "stylesheet" href = "style.css">
     <script>
+        function changeScr(delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            location.pathname = "trivia.html";
+            resolve(); // promise is resolved
+        }, delay);
+    });
+  }
         function allowDrop(ev) {
             ev.preventDefault();
         }
@@ -21,6 +29,7 @@
             node.style.setProperty("height","592px");
             node.style.setProperty("left","563.5px");
             node.style.setProperty("top","192.5px");
+            await changeScr(5000);
         }
         function removeImg(ele, delay){
             return new Promise((resolve) => {
