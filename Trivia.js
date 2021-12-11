@@ -93,22 +93,68 @@ function getWrongAnswers(array){
     }
     return temp;
 }
-function wrongAns(){
-    if (hitPoints > 0){ hitPoints--;
-    alert(`Wrong one, ${hitPoints} lives left`);}
-    else alert("ya died")
+// function wrongAns(){
+//     if (hitPoints > 0){ hitPoints--;
+//     alert(`Wrong one, ${hitPoints} lives left`);}
+//     else alert("ya died")
     
+// }
+// function rightAns(){
+//     if (hitPoints > 0)
+//     {rounds++;
+//     totalQs++;
+//     if (rounds < questionNum){makeQs(questionsFlag);alert(`${totalQs} questions answered`)}
+//     else alert("you did it")}
+//     else alert("ya dead")
+
+// }
+async function wrongAns(){
+    if (hitPoints > 0){
+        hitPoints--;
+    await message_bar(`Wrong one, ${hitPoints} lives left`, "mbar", 0, 1700);
+     
 }
-function rightAns(){
+    else await message_bar("hahahah! you've died", "mbar", 0, 1700);
+}
+async function rightAns(){
     if (hitPoints > 0)
     {rounds++;
     totalQs++;
-    if (rounds < questionNum){makeQs(questionsFlag);alert(`${totalQs} questions answered`)}
-    else alert("you did it")}
-    else alert("ya dead")
+    if (rounds < questionNum){
+        makeQs(questionsFlag);
+        await message_bar(`${totalQs} questions answered`, "mbar", 0, 1700);
+    }
+    else await message_bar("You've Won!", "mbar", 0, 1700);
+}
+    else await message_bar("You've Died!", "mbar", 0, 1700);
 
 }
 
+async function message_bar (msg, css, delay1,delay2) {
+    return new Promise((resolve) => {
+        setTimeout(async () => {
+            // CREATE BAR
+            var bar = document.createElement("div");
+            bar.innerHTML = msg;
+            bar.classList.add("mbar");
+            if (css) { bar.classList.add(css); }
+   
+            // APPEND TO CONTAINER
+            document.getElementById("mbar").appendChild(bar);
+            resolve(); // promise is resolved
+            await remove_bar(bar,delay2);
+        }, delay1);
+    });
+  }
+
+  function remove_bar(bar,delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            document.getElementById("mbar").removeChild(bar); 
+            resolve(); // promise is resolved
+        }, delay);
+    });
+  }
 //method that makes the q&a table and assigns ID's to specific elements
 function makeTable(table, thead, tbody){
     let row_1 = document.createElement('tr');

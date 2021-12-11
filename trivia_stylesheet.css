@@ -28,3 +28,7 @@ select{
     background-color: #ffffff;
     
 }
+#mbar{
+    font-family: 'Amiga Forever', sans-serifs;
+    color: tomato;
+}
