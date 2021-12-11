@@ -16,6 +16,7 @@
         #game_over{
             position:absolute;
             height:300px;
+            z-index: 3;
             animation-name: game-over_text;
             animation-duration: 6s;
             animation-fill-mode: forwards; 
@@ -33,20 +34,19 @@
             #david{
             position:absolute;
             height:600px;
+            top: 200px;
+            left: 250px;
+            z-index: 2;
             animation-name: game-over_text;
             animation-duration: 2s;
             animation-fill-mode: forwards; 
                     }
-            @keyframes game-over_text {
+                    /* animation fade-in instead of keyframes */
+            @keyframes david {
                 from {
-                    top: 200px;
-                    left: -250px;
                     visibility: hidden;}
                 to {
-                    top: 200px;
-                    left: 250px;
                     visibility: visible;}
-            }
             }
     </style>
     <!-- Internal script -->
