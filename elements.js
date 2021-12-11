@@ -2,7 +2,8 @@ var problems = require('maths-problems');
 var body = document.querySelector('body');
 
 async function beginning(){
-    await mbar('','math-game',0,1700);
+    await mbar('Hahahaha! You\'ve fallen into my trap! If you\'re smart enough, you will be able to leave this room. BUT I don\'t think you are...','beginning','beginning-remarks',0,7000);
+    await mbar('Try your best to figure out how to leave this room!','beginning','beginning-remarks',7000,5000);
 }
 
 beginning();
@@ -33,27 +34,28 @@ beginning();
     )}
 
 // MESSAGE BAR
-async function mbar (msg, css, delay1,delay2) {
+async function mbar (msg, css, div, delay1,delay2) {
     return new Promise((resolve) => {
         setTimeout(async () => {
             // CREATE BAR
             var bar = document.createElement("div");
             bar.innerHTML = msg;
-            bar.classList.add("mbar");
+            bar.classList.add(div);
             if (css) { bar.classList.add(css); }
    
             // APPEND TO CONTAINER
-            document.getElementById("mbar").appendChild(bar);
+            document.getElementById(div).appendChild(bar);
             resolve(); // promise is resolved
-            await remBar(bar,delay2);
+            await remBar(bar,div,delay2);
         }, delay1);
     });
   }
 
-  function remBar(bar,delay){
+  // REMOVE BAR
+  function remBar(bar,div,delay){
     return new Promise((resolve) => {
         setTimeout(() => {
-            document.getElementById("mbar").removeChild(bar); 
+            document.getElementById(div).removeChild(bar); 
             resolve(); // promise is resolved
         }, delay);
     });
@@ -134,31 +136,31 @@ async function mbar (msg, css, delay1,delay2) {
             if(randNum == 0){ // if it's an addition problem
                 var theA = first + sec;
                 if(input.value == theA){
-                    await mbar('Correct!','mbar',0,1700);
+                    await mbar('Correct!','mbar','mbar',0,1700);
                     score--;
                     numQ.innerHTML = "You have " + score + " questions left";
                 }else{
-                    await mbar('Incorrect!','mbar',0,1700);
+                    await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
             if(randNum == 1){ // if it's a subtraction problem
                 var theA = first - sec;
                 if(input.value == theA){
-                    await mbar('Correct!','mbar',0,1700);
+                    await mbar('Correct!','mbar','mbar',0,1700);
                     score--;
                     numQ.innerHTML = "You have " + score + " questions left";
                 }else{
-                    await mbar('Incorrect!','mbar',0,1700);
+                    await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
             if(randNum == 2){ // if it's a multiplication problem
                 var theA = first * sec;
                 if(input.value == theA){
-                    await mbar('Correct!','mbar',0,1700);
+                    await mbar('Correct!','mbar','mbar',0,1700);
                     score--;
                     numQ.innerHTML = "You have " + score + " questions left";
                 }else{
-                    await mbar('Incorrect!','mbar',0,1700);
+                    await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
             if(score == 0){
@@ -168,9 +170,9 @@ async function mbar (msg, css, delay1,delay2) {
                 node.style.setProperty("height","43%");
                 node.style.setProperty("left","890px");
                 node.style.setProperty("top","460px");
-                await mbar('AHA! I got the treasure chest to be opened!','mbar',0,3000);
-                await mbar('Oh... there is nothing in there...','mbar',3000,3000);
-                await mbar('WAIT! I see something!!!','mbar',3000,2000);
+                await mbar('AHA! I got the treasure chest to be opened!','mbar','mbar',0,3000);
+                await mbar('Oh... there is nothing in there...','mbar','mbar',3000,3000);
+                await mbar('WAIT! I see something!!!','mbar','mbar',3000,2000);
                 body.appendChild(key);
             }
             // clear out the input field
