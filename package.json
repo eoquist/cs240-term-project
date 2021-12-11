@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "cs240-term-project",
   "version": "1.0.0",
   "description": "For: People searching for an entertaining way to spend some time.",
@@ -18,5 +19,10 @@
   "homepage": "https://github.com/eoquist/cs240-term-project#readme",
   "dependencies": {
     "axios": "^0.24.0"
+=======
+  "dependencies": {
+    "axios": "^0.24.0",
+    "maths-problems": "^1.1.2"
+>>>>>>> seung
   }
 }

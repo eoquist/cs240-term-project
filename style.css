@@ -5,8 +5,58 @@ body {
   height: 100%;
   background-color: aliceblue;
 }
+.mbar {
+  padding: 5px;
+  margin: 5px;
+  background: #eee;
+  border: 1px solid #aaa;
+  position: absolute;
+  z-index: 3;
+  left: 600px;
+  font-family: theFont;
+  color: white;
+  text-shadow: 0 0 8px #000;
+  font-size: 30px;
+}
+@font-face {
+  font-family: theFont;
+  src: url("https://fonts.cdnfonts.com/s/7662/amiga4ever.woff") format("woff");
+}
+.beginning {
+  padding: 50px;
+  margin: 100px;
+  background: #71879e;
+  border: 1px solid #71879e;
+  position: absolute;
+  z-index: 4;
+  opacity: 0.95;
+  text-align: center;
+  font-size: 30px;
+  width: 1050px;
+  font-family: theFont;
+  text-shadow: 0 0 8px #000;
+  color: white;
+  top: 100px;
+  left: 30px;
+}
+.math-game {
+  padding: 100px;
+  margin: 168px;
+  background: #71879e;
+  border: 1px solid #71879e;
+  position: absolute;
+  z-index: 4;
+  opacity: 0.9;
+  text-align: center;
+  font-size: 30px;
+  width: 1100px;
+  font-family: theFont;
+  text-shadow: 0 0 8px #000;
+  color: white;
+}
 #dungeon {
   position: relative;
+  z-index: 0;
 }
 #web {
   position: absolute;
@@ -19,25 +69,29 @@ body {
   position: absolute;
   top: 150px;
   left: 300px;
-  width: 7%;
-  height: 15%;
+  width: 100px;
+  height: 120px;
 }
 #torch2 {
   position: absolute;
   top: 150px;
   left: 975px;
-  width: 7%;
-  height: 15%;
+  width: 100px;
+  height: 120px;
 }
-#door-closed {
+#door {
   position: absolute;
   top: 208px;
   left: 570px;
+  z-index: 2;
 }
-#door-open {
+#key {
   position: absolute;
-  left: 320px;
-  top: 190px;
+  left: 1100px;
+  top: 550px;
+  width: 50px;
+  height: 50px;
+  transform: rotate(70deg);
 }
 #puzzleL {
   position: absolute;
@@ -68,32 +122,27 @@ body {
   width: 150px;
   height: 150px;
 }
-/*
-Currently doesnt work
-*/
-.interact {
-  outline: 1px solid #90dcff;
-  padding: 20px 20px;
-  border: 5px solid transparent;
-}
-.interact:hover {
-  outline: 0px solid transparent;
-  padding: 20px 20px;
-  border: 5px solid #90dcff;
-}
-
 #lock {
   position: absolute;
-  left: 642px;
+  left: 637px;
   top: 510px;
-  width: 3%;
-  height: 7%;
+  width: 50px;
+  height: 60px;
+  z-index: 3;
 }
-#key {
+#oval-vortex {
   position: absolute;
-  left: 1100px;
-  top: 700px;
-  width: 3.5%;
-  height: auto;
-  transform: rotate(70deg);
+  top: 210px;
+  left: 577px;
+  height: 500px;
+  z-index: 1;
+}
+.interact:hover {
+  filter: drop-shadow(0px 3px 3px #000000); /* right, bottom, top*/
+}
+#chest {
+  position: absolute;
+  top: 570px;
+  left: 990px;
+  height: 25%;
 }
