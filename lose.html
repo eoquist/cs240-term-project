@@ -4,27 +4,50 @@
 </head>
 <body>
     <!-- Dungeon: main elements -->
-    <div id = "dungeon_box">
-        <img id = "game_over" src = "images/game_over.png">
-    </div>
+    <!-- Dungeon: main elements -->
     <img id = "dungeon" src = "images/dungeon1.png">
+    <img id = "game_over" src = "images/game_over.png">
+    <img id = "david" src = "images/Davidwizard.png">
     <!-- Internal style -->
     <style>
-        #dungeon_box{
-                    height: 100%;
-                    padding: 0;
-                    margin: 0;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;}
         #dungeon{
-                    z-index: 1;
+            position: relative;
                     }
         #game_over{
-                    margin:auto;
-                    height:300px;
-                    z-index: 2;
+            position:absolute;
+            height:300px;
+            animation-name: game-over_text;
+            animation-duration: 6s;
+            animation-fill-mode: forwards; 
                     }
+            @keyframes game-over_text {
+                from {
+                    top: -300px;
+                    left: 250px;
+                    content-visibility: hidden;}
+                to {
+                    top: 200px;
+                    left: 250px;
+                    content-visibility: visible;}
+            }
+            #david{
+            position:absolute;
+            height:600px;
+            animation-name: game-over_text;
+            animation-duration: 2s;
+            animation-fill-mode: forwards; 
+                    }
+            @keyframes game-over_text {
+                from {
+                    top: 200px;
+                    left: -250px;
+                    visibility: hidden;}
+                to {
+                    top: 200px;
+                    left: 250px;
+                    visibility: visible;}
+            }
+            }
     </style>
     <!-- Internal script -->
     <script>
