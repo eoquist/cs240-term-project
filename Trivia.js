@@ -12,9 +12,10 @@ let button = document.querySelector("#button")
 let rounds = 0;
 let hitPoints = 5;
 let totalQs = 0;
-button.addEventListener("mouseup", () =>{
+button.addEventListener("mouseup", async function(){
     if (!playing){
         playing = true;
+        await fade_in_david(400, "sfx/Old Man Sound Effects/This is Your Final Warning.wav");
         startGame();
     }
 })
@@ -93,21 +94,28 @@ function getWrongAnswers(array){
     }
     return temp;
 }
-// function wrongAns(){
-//     if (hitPoints > 0){ hitPoints--;
-//     alert(`Wrong one, ${hitPoints} lives left`);}
-//     else alert("ya died")
+async function fade_in_david(ms, sfx){
+    var david = document.createElement("img");
+    david.src = "images/Davidwizard.png";
+    david.style.opacity = 0;
+    document.getElementById("mbar").appendChild(david);
+    david.style.position = "absolute";
+    david.style.top= "150px";
+    var op = parseFloat(0);
+    let cont = false;
     
-// }
-// function rightAns(){
-//     if (hitPoints > 0)
-//     {rounds++;
-//     totalQs++;
-//     if (rounds < questionNum){makeQs(questionsFlag);alert(`${totalQs} questions answered`)}
-//     else alert("you did it")}
-//     else alert("ya dead")
-
-// }
+    var david_greeting = new Audio(sfx).play();
+    var timer = setInterval(function(){
+     if(op >= 1.0){
+         clearInterval(timer);
+         cont = true;
+         david.remove();
+     }
+     op += 0.2;
+     david.style.opacity = op;
+    },ms);
+    
+    }
 async function wrongAns(){
     if (hitPoints > 0){
         hitPoints--;
