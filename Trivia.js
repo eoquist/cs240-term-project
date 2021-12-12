@@ -3,11 +3,11 @@ const axios = require("axios");
 //variable that holds the questions
 var questionsFlag;
 //selector element for categories
-let categories = document.querySelector("#categories")
+let categories = document.querySelector("#categories");
 //flag to see if a game is being played
 let playing = false;
 //start button
-let button = document.querySelector("#button")
+let button = document.querySelector("#button");
 //list of rounds
 let rounds = 0;
 let hitPoints = 5;
@@ -292,6 +292,4 @@ async function getQuestionsSpec(cate){
         } catch(err) {
             alert(err)
             return;}}     
-        
-
-
+            
