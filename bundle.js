@@ -172,7 +172,7 @@ async function mbar (msg, css, div, delay1,delay2) {
                 node.src = "images/open-chest.png";
                 node.style.setProperty("height","43%");
                 node.style.setProperty("left","890px");
-                node.style.setProperty("top","460px");
+                node.style.setProperty("top","500px");
                 await mbar('AHA! I got the treasure chest to be opened!','mbar','mbar',0,3000);
                 await mbar('Oh... there is nothing in there...','mbar','mbar',3000,3000);
                 await mbar('WAIT! I see something!!!','mbar','mbar',3000,2000);
