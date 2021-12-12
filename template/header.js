@@ -26,19 +26,22 @@ bg.play();
 // ???????????????????????????????????????????????????????????????????????????????????????????
 // alternative-- use text icon // String.fromCodePoint(0x1f508 || 0x1f509 || 0x1f50a)
 // con: .textContent.trim() and there are issues with accidentally highlighting
+var vol_isOn = "high";
 document.getElementById("sound_button").addEventListener("click", function(){
-    var vol_isOn = true;
-    if(vol_isOn){
-        document.getElementById("sound_button").src = 'icons/speaker-low-vol.png'; // set off
-        console.log('muted');
-        vol_isOn = false;
+    if(vol_isOn == "high"){
+        document.getElementById("sound_button").src = "icons/speaker-medium-vol.png"; // set medium
+        vol_isOn = "medium";
+        bg.volume = 0.5;
+    }
+    else if(vol_isOn == "medium"){
+        document.getElementById("sound_button").src = "icons/speaker-low-vol.png"; // set off
+        vol_isOn = "off";
         bg.volume = 0.0;
     }
     else{
-        document.getElementById("sound_button").src = 'icons/speaker-high-vol.png'; // set high
-        console.log('high');
-        vol_isOn = true;
-        bg.volume = 0.5;
+        document.getElementById("sound_button").src = "icons/speaker-high-vol.png"; // set high
+        vol_isOn = "high";
+        bg.volume = 1.0;
     }
 });
 

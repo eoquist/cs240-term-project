@@ -1,32 +1,3 @@
-<<<<<<< HEAD
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: aliceblue;
-}
-#dungeon {
-  position: relative;
-  z-index: 1;
-}
-#vortex {
-  position: absolute;
-  top: 208px;
-  left: 570px;
-  z-index: 2;
-}
-#door {
-  position: absolute;
-  top: 208px;
-  left: 570px;
-  z-index: 3;
-}
-/* hitbox-esque */
-.interact:hover {
-  filter: drop-shadow(3px 0px 3px #90dcff); /* right, bottom, top*/
-}
-=======
 #shelf {
   border: 8px solid rgb(179, 138, 84);
   background-color: tan;
@@ -70,4 +41,3 @@ tr, td {
   height: 75px;
   z-index: 3;
 } */
->>>>>>> emilee
