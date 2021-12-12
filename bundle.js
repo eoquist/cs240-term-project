@@ -200,7 +200,6 @@ let chest = document.getElementById("chest");
 chest.addEventListener("click", async function(){
     mathGame('math-game');
 });
-
 },{"maths-problems":504}],2:[function(require,module,exports){
 /*! decimal.js v4.0.4 https://github.com/MikeMcl/decimal.js/LICENCE */
 ;(function (global) {
