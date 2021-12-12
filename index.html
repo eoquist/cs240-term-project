@@ -1,21 +1,67 @@
 <!DOCTYPE html>
 <head>
     <link rel = "stylesheet" href = "style.css">
+    <script>
+        function changeScr(delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            location.pathname = "trivia.html";
+            resolve(); // promise is resolved
+        }, delay);
+    });
+  }
+        function allowDrop(ev) {
+            ev.preventDefault();
+        }
+        function drag(ev) {
+            ev.dataTransfer.setData("text", ev.target.id);
+        }
+        
+        async function drop(ev) {
+            ev.preventDefault();
+            document.querySelector("#lock").src = "images/open-lock.png";
+            document.querySelector("#lock").height = "5%";
+            await removeImg(document.querySelector("#lock"),2000);
+            await removeImg(document.querySelector("#key"),0);
+            let node = document.getElementById("door");
+            let src2 = "images/door-openv4.png";
+            node.src = src2; // set to open
+            node.style.setProperty("height","592px");
+            node.style.setProperty("left","563.5px");
+            node.style.setProperty("top","192.5px");
+            await changeScr(5000);
+        }
+        function removeImg(ele, delay){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    ele.parentNode.removeChild(ele);
+                    resolve(); // promise is resolved
+                }, delay);
+            });
+}
+    </script>
 </head>
 <body>
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/amiga-forever');
+    </style>
     <!-- Dungeon: main elements -->
+    <div id = "beginning-remarks"></div>
+    <div id = "mbar"></div>
+    <div id = "math-game"></div>
     <img id = "dungeon" src = "images/dungeon-snd-texture.png">
-    <img id = "web" src = "images/spider_web.gif">
-    <img id = "torch1" src = "images/Torch_Gif.gif">
-    <img id = "torch2" src = "images/Torch_Gif.gif">
-    <img id = "door-closed" src = "images/door-close.png">
+    <img id = "web" draggable = "false" src = "images/spider_web.gif">
+    <img id = "torch1" draggable = "false" class = "interact" src = "images/Torch_Gif.gif">
+    <img id = "torch2" draggable = "false" class = "interact" src = "images/Torch_Gif.gif">
+    <img id = "door" draggable = "false" class = "interact" src = "images/door-close.png">
+    <img id = "oval-vortex" draggable = "false" src = "images/oval-vortex.gif">
     <!-- Dungeon: fun/aesthetic elements -->
-    <img id = "puzzleL" src = "icons/puzzle-piece1.png">
-    <img id = "puzzleR" src = "icons/puzzle-piece2.png">
-    <img id = "paper1" src = "icons/paper1.png">
-    <img id = "paper2" src = "icons/paper2.png">
-    <img id = "lock" src = "images/pixil-frame-0.png">
-    <img id = "key" src = "images/key.png">
-    <script src = "elements.js"></script>
+    <img id = "puzzleL" class = "interact" src = "icons/puzzle-piece1.png">
+    <img id = "puzzleR" class = "interact" src = "icons/puzzle-piece2.png">
+    <img id = "paper1" draggable = "false" class = "interact" src = "icons/paper1.png">
+    <img id = "paper2" draggable = "false" class = "interact" src = "icons/paper2.png">
+    <img id = "lock"  draggable = "false" class = "interact" ondrop = "drop(event)" ondragover= "allowDrop(event)" src = "images/pixil-frame-0.png">
+    <img id = "chest" draggable = "false" class = "interact" src = "images/chest.png">
+    <script src = "bundle.js"></script>
 </body>
 </html>

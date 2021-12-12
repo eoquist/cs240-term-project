@@ -3,18 +3,19 @@ const axios = require("axios");
 //variable that holds the questions
 var questionsFlag;
 //selector element for categories
-let categories = document.querySelector("#categories")
+let categories = document.querySelector("#categories");
 //flag to see if a game is being played
 let playing = false;
 //start button
-let button = document.querySelector("#button")
+let button = document.querySelector("#button");
 //list of rounds
 let rounds = 0;
 let hitPoints = 5;
 let totalQs = 0;
-button.addEventListener("mouseup", () =>{
+button.addEventListener("mouseup", async function(){
     if (!playing){
         playing = true;
+        await fade_in_david(400, "sfx/Old Man Sound Effects/This is Your Final Warning.wav");
         startGame();
     }
 })
@@ -39,6 +40,7 @@ async function startGame(){
     table.appendChild(thead);
     table.appendChild(tbody);
     document.getElementById('body').appendChild(table);
+    table.classList.add("table");
     //calls table maker to populate cells
     makeTable(table, thead, tbody);
     //dom manips the first question
@@ -93,22 +95,77 @@ function getWrongAnswers(array){
     }
     return temp;
 }
-function wrongAns(){
-    if (hitPoints > 0){ hitPoints--;
-    alert(`Wrong one, ${hitPoints} lives left`);}
-    else alert("ya died")
+async function fade_in_david(ms, sfx){
+    var david = document.createElement("img");
+    david.src = "images/Davidwizard.png";
+    david.style.opacity = 0;
+    document.getElementById("mbar").appendChild(david);
+    david.style.position = "absolute";
+    david.style.top= "150px";
+    var op = parseFloat(0);
+    let cont = false;
     
+    var david_greeting = new Audio(sfx).play();
+    david.style.setProperty("height", "500px");
+    david.style.setProperty("left", "1100px");
+    david.style.setProperty("top", "200px");
+    var timer = setInterval(function(){
+     if(op >= 1.0){
+         clearInterval(timer);
+         cont = true;
+     }
+     op += 0.2;
+     david.style.opacity = op;
+    },ms);
+    
+    }
+async function wrongAns(){
+    if (hitPoints > 0){
+        hitPoints--;
+    await message_bar(`Wrong one, ${hitPoints} lives left`, "mbar", 0, 1700);
+     
 }
-function rightAns(){
+    else await message_bar("hahahah! you've died", "mbar", 0, 1700);
+}
+async function rightAns(){
     if (hitPoints > 0)
     {rounds++;
     totalQs++;
-    if (rounds < questionNum){makeQs(questionsFlag);alert(`${totalQs} questions answered`)}
-    else alert("you did it")}
-    else alert("ya dead")
+    if (rounds < questionNum){
+        makeQs(questionsFlag);
+        await message_bar(`${totalQs} questions answered`, "mbar", 0, 1700);
+    }
+    else await message_bar("You've Won!", "mbar", 0, 1700);
+}
+    else await message_bar("You've Died!", "mbar", 0, 1700);
 
 }
 
+async function message_bar (msg, css, delay1,delay2) {
+    return new Promise((resolve) => {
+        setTimeout(async () => {
+            // CREATE BAR
+            var bar = document.createElement("div");
+            bar.innerHTML = msg;
+            bar.classList.add("mbar");
+            if (css) { bar.classList.add(css); }
+   
+            // APPEND TO CONTAINER
+            document.getElementById("mbar").appendChild(bar);
+            resolve(); // promise is resolved
+            await remove_bar(bar,delay2);
+        }, delay1);
+    });
+  }
+
+  function remove_bar(bar,delay){
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            document.getElementById("mbar").removeChild(bar); 
+            resolve(); // promise is resolved
+        }, delay);
+    });
+  }
 //method that makes the q&a table and assigns ID's to specific elements
 function makeTable(table, thead, tbody){
     let row_1 = document.createElement('tr');
@@ -238,6 +295,4 @@ async function getQuestionsSpec(cate){
         } catch(err) {
             alert(err)
             return;}}     
-        
-
-
+            

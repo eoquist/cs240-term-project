@@ -1,0 +1,1 @@
+// function that, when clicking on a chest, makes a sound a makes a notif pop up and other shit
