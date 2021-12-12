@@ -29,26 +29,6 @@ body {
     height: 75px;
     z-index: 4;
   }
-  .textbox {
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .speech {
-    width: 22ch;
-    animation: typing 2s steps(22), step-end;
-    white-space: nowrap;
-    overflow: hidden;
-    font-family: monospace;
-    font-size: 2em;
-  }
-
-  @keyframes typing {
-    from {
-      width: 0
-    }
-  }
   .draggable:hover{
     filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
   }
