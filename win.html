@@ -4,19 +4,22 @@
 </head>
 <body>
     <!-- Dungeon: main elements -->
-    <img id = "dungeon" src = "images/dungeon-snd-texture.png">
+    <img id = "dungeon" src = "images/dungeon1.png">
     <img id = "david" src = "images/Davidwizard.png">
     <!-- Internal style -->
     <style>
         #dungeon{
-            z-index: 1;
-                }
-        #david{
+            position: relative;
+                    }
+            #david{
             position:absolute;
-            height:300px;
-            top: 250px;
-            left: 400px;
+            height:600px;
+            top: 200px;
+            left: 250px;
             z-index: 2;
+            animation-name: game-over_text;
+            animation: fadein 2s;
+            animation-fill-mode: forwards; 
                     }
     </style>
     <!-- Internal script -->

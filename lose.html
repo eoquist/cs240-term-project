@@ -4,12 +4,15 @@
 </head>
 <body>
     <!-- Dungeon: main elements -->
-    <!-- Dungeon: main elements -->
     <img id = "dungeon" src = "images/dungeon1.png">
     <img id = "game_over" src = "images/game_over.png">
     <img id = "david" src = "images/Davidwizard.png">
     <!-- Internal style -->
     <style>
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        } 
         #dungeon{
             position: relative;
                     }
@@ -34,24 +37,18 @@
             #david{
             position:absolute;
             height:600px;
-            top: 200px;
+            top: 250px;
             left: 250px;
             z-index: 2;
-            animation-name: game-over_text;
-            animation-duration: 2s;
+            animation-name: fadeIn;
+            animation-duration: 10s;
             animation-fill-mode: forwards; 
                     }
-                    /* animation fade-in instead of keyframes */
-            @keyframes david {
-                from {
-                    visibility: hidden;}
-                to {
-                    visibility: visible;}
-            }
     </style>
     <!-- Internal script -->
     <script>
-
+        sfx = "sfx/Old Man Sound Effects/Its Hopeless.wav";
+        var david_sfx = new Audio(sfx).play();
     </script>
 </body>
 </html>
