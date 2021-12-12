@@ -41,6 +41,7 @@ async function startGame(){
     table.appendChild(thead);
     table.appendChild(tbody);
     document.getElementById('body').appendChild(table);
+    table.classList.add("table");
     //calls table maker to populate cells
     makeTable(table, thead, tbody);
     //dom manips the first question
@@ -106,11 +107,13 @@ async function fade_in_david(ms, sfx){
     let cont = false;
     
     var david_greeting = new Audio(sfx).play();
+    david.style.setProperty("height", "500px");
+    david.style.setProperty("left", "1100px");
+    david.style.setProperty("top", "200px");
     var timer = setInterval(function(){
      if(op >= 1.0){
          clearInterval(timer);
          cont = true;
-         david.remove();
      }
      op += 0.2;
      david.style.opacity = op;
