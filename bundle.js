@@ -1,6 +1,6 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 var problems = require('maths-problems');
-var body = document.querySelector('body');
+var node = document.getElementById("chest");
 
 
 async function beginning(){
@@ -45,7 +45,7 @@ async function mbar (msg, css, div, delay1,delay2) {
             bar.innerHTML = msg;
             bar.classList.add(div);
             if (css) { bar.classList.add(css); }
-   
+
             // APPEND TO CONTAINER
             document.getElementById(div).appendChild(bar);
             resolve(); // promise is resolved
@@ -115,9 +115,9 @@ async function mbar (msg, css, div, delay1,delay2) {
     var timeLeft = 30;
     var timerId = setInterval(countdown, 1000);
     function countdown() {
-        if (timeLeft == -1) {
-          clearTimeout(timerId);
-        //   DO SOMETHING!!! GET YOU LOST HTML PAGE!! //
+        if (timeLeft <= 0) {
+            clearTimeout(timerId);
+            window.location = "https://www.youtube.com/watch?v=fUXtjdMWUHM";
         } else {
           timer.innerHTML = timeLeft + ' seconds remaining';
           timeLeft--;
@@ -168,7 +168,8 @@ async function mbar (msg, css, div, delay1,delay2) {
             }
             if(score == 0){
                 table.parentNode.removeChild(table);
-                let node = document.getElementById("chest");
+                playing = false;
+                finished = true;
                 node.src = "images/open-chest.png";
                 node.style.setProperty("height","43%");
                 node.style.setProperty("left","890px");
@@ -176,6 +177,7 @@ async function mbar (msg, css, div, delay1,delay2) {
                 await mbar('AHA! I got the treasure chest to be opened!','mbar','mbar',0,3000);
                 await mbar('Oh... there is nothing in there...','mbar','mbar',3000,3000);
                 await mbar('WAIT! I see something!!!','mbar','mbar',3000,2000);
+                let body = document.querySelector("body");
                 body.appendChild(key);
             }
             // clear out the input field
@@ -194,11 +196,15 @@ async function mbar (msg, css, div, delay1,delay2) {
     // (B3) APPEND TO CONTAINER
     document.getElementById("math-game").appendChild(table);
   }
-
+  var playing = false;
+  var finished = false;
 
 let chest = document.getElementById("chest");
 chest.addEventListener("click", async function(){
-    mathGame('math-game');
+    if(!playing && !finished){
+        playing = true;
+        mathGame('math-game');
+    }
 });
 },{"maths-problems":504}],2:[function(require,module,exports){
 /*! decimal.js v4.0.4 https://github.com/MikeMcl/decimal.js/LICENCE */
