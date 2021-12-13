@@ -1,27 +1,43 @@
-body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
-  background-color: aliceblue;
-}
-#dungeon {
-  position: relative;
-  z-index: 1;
-}
-#vortex {
+#shelf {
+  border: 8px solid rgb(179, 138, 84);
+  background-color: tan;
   position: absolute;
-  top: 208px;
-  left: 570px;
+  top: 300px;
+  left: 300px;
+  z-index: 4;
+}
+tr, td {
+  border-bottom: 5px solid rgb(179, 138, 84);
+  vertical-align: bottom;
+}
+.potion .flask .vial .tooltip{
+  visibility: hidden;
+  width: 120px;
+  background-color: black;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 5px 0;
+
+  /* Position the tooltip */
+  position: relative;
   z-index: 2;
 }
-#door {
+.potion:hover,.flask:hover,.vial:hover, .tooltip{
+  visibility: visible;
+}
+#chest {
+  position: absolute;
+  top: 600px;
+  left: 1100px;
+  height: 200px;
+  z-index: 3;
+}
+
+/* img[name="blue_potion"]{
   position: absolute;
   top: 208px;
   left: 570px;
+  height: 75px;
   z-index: 3;
-}
-/* hitbox-esque */
-.interact:hover {
-  filter: drop-shadow(3px 0px 3px #90dcff); /* right, bottom, top*/
-}
+} */

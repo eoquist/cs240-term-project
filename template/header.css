@@ -1,0 +1,55 @@
+body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color:aliceblue;
+  }
+  #dungeon {
+    position: relative;
+    z-index: 1;
+  }
+  #vortex{
+    position: absolute;
+    top: 255px;
+    left: 618px;
+    height: 400px;
+    z-index: 2;
+  }
+  #door{
+    position: absolute;
+    top: 208px;
+    left: 570px;
+    z-index: 3;
+  }
+  #sound_button {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    height: 75px;
+    z-index: 4;
+  }
+  .draggable:hover{
+    filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
+  }
+/* TAKEN FROM https://www.w3schools.com/css/css_tooltip.asp
+      .tooltip .tooltiptext {
+        visibility: hidden;
+        width: 120px;
+        background-color: black;
+        color: #fff;
+        text-align: center;
+        border-radius: 6px;
+        padding: 5px 0;
+        
+        /* Position the tooltip */
+        /* position: absolute;
+        z-index: 1;
+        bottom: 100%;
+        left: 50%;
+        margin-left: -60px;
+      }
+      
+      .tooltip:hover .tooltiptext {
+        visibility: visible;
+      } */

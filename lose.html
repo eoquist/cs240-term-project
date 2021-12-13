@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <link rel = "stylesheet" href = "style.css">
+</head>
+<body>
+    <!-- Dungeon: main elements -->
+    <img id = "dungeon" src = "images/dungeon1.png">
+    <img id = "game_over" src = "images/game_over.png">
+    <img id = "david" src = "images/Davidwizard.png">
+    <!-- Internal style -->
+    <style>
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        } 
+        #dungeon{
+            position: relative;
+        }
+        #game_over{
+            position:absolute;
+            height:300px;
+            z-index: 3;
+            animation-name: game-over_text;
+            animation-duration: 6s;
+            animation-fill-mode: forwards; 
+        }
+            @keyframes game-over_text {
+                from {
+                    top: -300px;
+                    left: 250px;
+                    content-visibility: hidden;}
+                to {
+                    top: 200px;
+                    left: 250px;
+                    content-visibility: visible;}
+            }
+        #david{
+            position:absolute;
+            height:600px;
+            top: 250px;
+            left: 250px;
+            z-index: 2;
+            animation-name: fadeIn;
+            animation-duration: 10s;
+            animation-fill-mode: forwards; 
+        }
+    </style>
+    <!-- Internal script -->
+    <script>
+        sfx = "sfx/Old Man Sound Effects/Its Hopeless.wav";
+        var david_sfx = new Audio(sfx).play();
+    </script>
+</body>
+</html>
