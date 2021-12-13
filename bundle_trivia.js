@@ -19,6 +19,7 @@ button.addEventListener("mouseup", async function(){
         await fade_in_david(400, "sfx/Old Man Sound Effects/This is Your Final Warning.wav");
         startGame();
     }
+
 })
 //Things to ask david
 //Package for require
@@ -46,7 +47,6 @@ async function startGame(){
     makeTable(table, thead, tbody);
     //dom manips the first question
     makeQs(questionsFlag);
-    
     
 }
 
@@ -79,11 +79,12 @@ function getAnswerOrder(wrong, right){
 
 //dom manipulates the catagory and questions in
 function makeQs(questionsFlag){
-    document.getElementById(`cata`).innerHTML = questionsFlag.data[rounds].category
+    document.getElementById(`cata`).innerHTML = questionsFlag.data[rounds].category;
     document.getElementById('question').innerHTML = questionsFlag.data[rounds].question;
-    document.getElementById("qnum").innerHTML = `#${totalQs + 1}`
-    let wrong = getWrongAnswers(questionsFlag.data[rounds].incorrectAnswers)
-    getAnswerOrder(wrong, questionsFlag.data[rounds].correctAnswer)
+    document.getElementById("qnum").innerHTML = `#${totalQs + 1}`;
+    let wrong = getWrongAnswers(questionsFlag.data[rounds].incorrectAnswers);
+    getAnswerOrder(wrong, questionsFlag.data[rounds].correctAnswer);
+   // console.log(questionsFlag.data[rounds].correctAnswer);
 }
 
 //methods to get three random wrong asnwers from provided list
@@ -124,21 +125,34 @@ async function wrongAns(){
     if (hitPoints > 0){
         hitPoints--;
     await message_bar(`Wrong one, ${hitPoints} lives left`, "mbar", 0, 1700);
+    var wrong_ans = new Audio("sfx/Old Man Sound Effects/Ouch 1.wav").play();
+    if(hitPoints == 0){
+         await message_bar("hahahah! you've died", "mbar", 0, 1700);
+    }
      
 }
-    else await message_bar("hahahah! you've died", "mbar", 0, 1700);
+    else await message_bar("You've Died!", "mbar", 0, 1700);
 }
+//winning condition isnt working properly
+
 async function rightAns(){
     if (hitPoints > 0)
     {rounds++;
     totalQs++;
     if (rounds < questionNum){
         makeQs(questionsFlag);
-        await message_bar(`${totalQs} questions answered`, "mbar", 0, 1700);
+        await message_bar(`Correct! ${totalQs} questions answered`, "mbar", 0, 1700);
+        var right_ans = new Audio("sfx/Old Man Sound Effects/Yay.wav").play();
     }
-    else await message_bar("You've Won!", "mbar", 0, 1700);
+    else if (rounds == questionNum) {
+        await message_bar("You've Won!", "mbar", 0, 1700);
+        var game_won = new Audio("sfx/Old Man Sound Effects/You Did It 1.wav").play();
+    };
+    
 }
-    else await message_bar("You've Died!", "mbar", 0, 1700);
+ if (hitPoints == 0) {
+     await message_bar("You've Died!", "mbar", 0, 1700);
+    }
 
 }
 
