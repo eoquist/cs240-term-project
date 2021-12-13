@@ -17,16 +17,6 @@
         #dungeon{
             position: relative;
         }
-        /* #david{
-            position:absolute;
-            height:600px;
-            top: 200px;
-            left: 1000px;
-            z-index: 2;
-            animation-name: fadeIn;
-            animation-duration: 2s;
-            animation-fill-mode: forwards; 
-        } */
         #david:hover{
             filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
         }
@@ -34,7 +24,7 @@
                 font-family: theFont;
                 src: url("https://fonts.cdnfonts.com/s/7662/amiga4ever.woff") format("woff");
             }
-            #names{
+        #names{ /* styling for the name credits */
             position:absolute;
             height:300px;
             z-index: 3;
@@ -46,7 +36,7 @@
             text-shadow: 2px 2px #000;
             font-size: 20px;
         }
-        #mbar{
+        #mbar{  /* styling for the You Win message */
             position:absolute;
             height:300px;
             z-index: 3;
@@ -68,7 +58,7 @@
                     left: 500px;
                     content-visibility: visible;}
             }
-            @keyframes game-over_text_name {
+            @keyframes game-over_text_name {    
                 from {
                     top: 170px;
                     left: 500px;
@@ -96,6 +86,7 @@
         var david_sfx = new Audio(sfx).play();
         var sprite = document.getElementById("david");
         var display_msg = 'Huzzah';
+        /* Displays message for the winning screen */
         mbar("YOU WIN", "mbar", "mbar");
         mbar("Created by:", "names", 'names');
         mbar("Madison Sanchez-Forman", "names", 'names');
