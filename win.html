@@ -8,23 +8,51 @@
     <img id = "david" src = "images/Davidwizard.png">
     <!-- Internal style -->
     <style>
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        } 
         #dungeon{
             position: relative;
-                    }
-            #david{
+        }
+        #david{
             position:absolute;
             height:600px;
             top: 200px;
-            left: 250px;
+            left: 1000px;
             z-index: 2;
-            animation-name: game-over_text;
-            animation: fadein 2s;
+            animation-name: fadeIn;
+            animation-duration: 2s;
             animation-fill-mode: forwards; 
-                    }
+        }
+        #david:hover{
+            filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
+        }
     </style>
     <!-- Internal script -->
     <script>
+        sfx = "sfx/Old Man Sound Effects/Huzzah.wav";
+        var david_sfx = new Audio(sfx).play();
+        var sprite = document.getElementById("david");
+        var display_msg = 'Huzzah';
 
+        // Functions / etc.
+        const win_sfx = [
+            "sfx/Old Man Sound Effects/Bravo.wav",
+            "sfx/Old Man Sound Effects/Finally.wav",
+            "sfx/Old Man Sound Effects/Hurray.wav",
+            "sfx/Old Man Sound Effects/Huzzah.wav",
+            "sfx/Old Man Sound Effects/Oh Hurray.wav", 
+            "sfx/Old Man Sound Effects/Yay.wav",
+            "sfx/Old Man Sound Effects/You Did It 1.wav",
+            "sfx/Old Man Sound Effects/You Did It 2.wav",
+            "sfx/Old Man Sound Effects/You Did It 3.wav",
+            "sfx/Old Man Sound Effects/You Did It 4.wav"
+        ];
+        sprite.addEventListener("click", function(){
+            var num = Math.floor(Math.random()*win_sfx.length);
+            var sfx = new Audio(win_sfx[num]).play();
+        });
     </script>
 </body>
 </html>
