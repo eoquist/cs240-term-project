@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <head>
-    <link rel = "stylesheet" href = "style.css">
+    <!-- <link rel = "stylesheet" href = "style.css"> -->
 </head>
 <body>
     <!-- Dungeon: main elements -->
     <img id = "dungeon" src = "images/dungeon-snd-texture.png">
     <img id = "david" src = "images/Davidwizard.png">
+    <div id= "mbar"></div>
+    <div id= "names"></div>
     <!-- Internal style -->
     <style>
         @keyframes fadeIn {
@@ -15,7 +17,7 @@
         #dungeon{
             position: relative;
         }
-        #david{
+        /* #david{
             position:absolute;
             height:600px;
             top: 200px;
@@ -24,25 +26,82 @@
             animation-name: fadeIn;
             animation-duration: 2s;
             animation-fill-mode: forwards; 
-        }
+        } */
         #david:hover{
             filter: drop-shadow(3px 3px 3px #90dcff); /* right, bottom, top*/
         }
-        #goldpile{
+        @font-face {
+                font-family: theFont;
+                src: url("https://fonts.cdnfonts.com/s/7662/amiga4ever.woff") format("woff");
+            }
+            #names{
+            position:absolute;
+            height:300px;
+            z-index: 3;
+            animation-name: game-over_text_name;
+            animation-duration: 6s;
+            animation-fill-mode: forwards; 
+            font-family: theFont;
+            color: #ffffff;
+            text-shadow: 2px 2px #000;
+            font-size: 20px;
+        }
+        #mbar{
+            position:absolute;
+            height:300px;
+            z-index: 3;
+            animation-name: game-over_text;
+            animation-duration: 6s;
+            animation-fill-mode: forwards; 
+            font-family: theFont;
+            color: #f7c80d;
+            text-shadow: 10px 10px #000;
+            font-size: 200px
+        }
+            @keyframes game-over_text {
+                from {
+                    top: -300px;
+                    left: 500px;
+                    content-visibility: hidden;}
+                to {
+                    top: 200px;
+                    left: 500px;
+                    content-visibility: visible;}
+            }
+            @keyframes game-over_text_name {
+                from {
+                    top: 170px;
+                    left: 500px;
+                    content-visibility: hidden;}
+                to {
+                    top: 670px;
+                    left: 500px;
+                    content-visibility: visible;}
+            }
+        #david{
             position:absolute;
             height:600px;
-            top: 200px;
-            left: 100px;
+            top: 250px;
+            left: 250px;
             z-index: 2;
+            animation-name: fadeIn;
+            animation-duration: 10s;
+            animation-fill-mode: forwards; 
         }
     </style>
     <!-- Internal script -->
     <script>
+        var trumpet = new Audio("sounds/trumpet.mp3").play();
         sfx = "sfx/Old Man Sound Effects/Huzzah.wav";
         var david_sfx = new Audio(sfx).play();
         var sprite = document.getElementById("david");
         var display_msg = 'Huzzah';
-        // MSG SEUNG
+        mbar("YOU WIN", "mbar", "mbar");
+        mbar("Created by:", "names", 'names');
+        mbar("Madison Sanchez-Forman", "names", 'names');
+        mbar("Seung Park", "names", 'names');
+        mbar("Emilee Oquist", "names", 'names');
+        mbar("Mitch Hurley", "names", 'names');
 
         // Functions / etc.
         const win_sfx = [
@@ -63,31 +122,14 @@
         });
 
         // MESSAGE BAR
-        async function mbar (msg, css, div, delay1,delay2) {
-            return new Promise((resolve) => {
-                setTimeout(async () => {
-                    // CREATE BAR
-                    var bar = document.createElement("div");
-                    bar.innerHTML = msg;
-                    bar.classList.add(div);
-                    if (css) { bar.classList.add(css); }
+        function mbar (msg, css, div) {
+            // CREATE BAR
+            var bar = document.createElement("div");
+            bar.innerHTML = msg;
+            bar.classList.add(css);
         
-                    // APPEND TO CONTAINER
-                    document.getElementById(div).appendChild(bar);
-                    resolve(); // promise is resolved
-                    await remBar(bar,div,delay2);
-                }, delay1);
-            });
-        }
-
-        // REMOVE BAR
-        function remBar(bar,div,delay){
-            return new Promise((resolve) => {
-                setTimeout(() => {
-                    document.getElementById(div).removeChild(bar); 
-                    resolve(); // promise is resolved
-                }, delay);
-            });
+            // APPEND TO CONTAINER
+            document.getElementById(div).appendChild(bar);
         }
     </script>
 </body>
