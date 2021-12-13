@@ -2,14 +2,15 @@
 <head>
     <link rel = "stylesheet" href = "style.css">
     <script>
+        var body = document.querySelector('body');
         function changeScr(delay){
-    return new Promise((resolve) => {
-        setTimeout(() => {
-            location.pathname = "trivia.html";
-            resolve(); // promise is resolved
-        }, delay);
-    });
-  }
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    location.pathname = "trivia.html";
+                    resolve(); // promise is resolved
+                }, delay);
+            });
+        }
         function allowDrop(ev) {
             ev.preventDefault();
         }
@@ -29,7 +30,11 @@
             node.style.setProperty("height","592px");
             node.style.setProperty("left","563.5px");
             node.style.setProperty("top","192.5px");
-            await changeScr(5000);
+            var bar = document.createElement("div");
+            bar.innerHTML = "Click to continue! BUT BEWARE!";
+            bar.classList.add(div);
+            bar.classList.add('next');
+            body.appendChild(bar);
         }
         function removeImg(ele, delay){
             return new Promise((resolve) => {
@@ -38,7 +43,7 @@
                     resolve(); // promise is resolved
                 }, delay);
             });
-}
+        }
     </script>
 </head>
 <body>
@@ -49,6 +54,7 @@
     <div id = "beginning-remarks"></div>
     <div id = "mbar"></div>
     <div id = "math-game"></div>
+    <div id = "next"></div>
     <img id = "dungeon" src = "images/dungeon-snd-texture.png">
     <img id = "web" draggable = "false" src = "images/spider_web.gif">
     <img id = "torch1" draggable = "false" class = "interact" src = "images/Torch_Gif.gif">
