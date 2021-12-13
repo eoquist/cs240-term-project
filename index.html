@@ -6,8 +6,9 @@
         function changeScr(delay){
             return new Promise((resolve) => {
                 setTimeout(() => {
+                    console.log("switch pages");
                     location.pathname = "trivia.html";
-                    resolve(); // promise is resolved
+                    resolve(); // promise is resolvedxf
                 }, delay);
             });
         }
@@ -30,11 +31,8 @@
             node.style.setProperty("height","592px");
             node.style.setProperty("left","563.5px");
             node.style.setProperty("top","192.5px");
-            var bar = document.createElement("div");
-            bar.innerHTML = "Click to continue! BUT BEWARE!";
-            bar.classList.add(div);
-            bar.classList.add('next');
-            body.appendChild(bar);
+            await changeScr(5000);
+
         }
         function removeImg(ele, delay){
             return new Promise((resolve) => {
