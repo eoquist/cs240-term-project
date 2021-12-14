@@ -175,10 +175,10 @@ button {
   color: #ffca38;
   position: absolute;
   top: 25px;
-  left: 300px;
+  left: 290px;
   z-index: 2;
   font-size: 40px;
-  text-shadow: 0 0 8px #000;
+  text-shadow: 2px 2px 2px #000;
 
 }
 .and{
@@ -186,18 +186,18 @@ button {
   color: #ffca38;
   position: absolute;
   top: 45px;
-  left: 345px;
+  left: 340px;
   z-index: 2;
   font-size: 40px;
-  text-shadow: 0 0 8px #000;
+  text-shadow: 2px 2px 2px #000;
 }
 .davids{
   font-family: theFont;
   color: #ffca38;
   position: absolute;
   top: 65px;
-  left: 315px;
+  left: 310px;
   z-index: 2;
-  text-shadow: 0 0 8px #000;
+  text-shadow: 2px 2px 2px #000;
   font-size: 40px;
 }
