@@ -16,7 +16,7 @@ let totalQs = 0;
 button.addEventListener("mouseup", async function(){
     if (!playing){
         playing = true;
-        await fade_in_david(400, "sfx/Old Man Sound Effects/This is Your Final Warning.wav");
+        await fade_in_david(400, "sfx/Old Man Sound Effects/Oh Hello.wav");
         startGame();
     }
 

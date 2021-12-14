@@ -46,6 +46,30 @@
 <body>
     <style>
         @import url('http://fonts.cdnfonts.com/css/amiga-forever');
+        @keyframes fadeIn {
+        0% {opacity: 0;}
+        100% {opacity: 1;}
+        } 
+        @keyframes game-over_text {
+                from {
+                    top: -300px;
+                    left: 500px;
+                    content-visibility: hidden;}
+                to {
+                    top: 200px;
+                    left: 500px;
+                    content-visibility: visible;}
+            }
+            @keyframes game-over_text_name {    
+                from {
+                    top: 170px;
+                    left: 500px;
+                    content-visibility: hidden;}
+                to {
+                    top: 670px;
+                    left: 500px;
+                    content-visibility: visible;}
+            }
     </style>
     <!-- Dungeon: main elements -->
     <div id = "beginning-remarks"></div>
@@ -58,12 +82,29 @@
     <img id = "torch2" draggable = "false" class = "interact" src = "images/Torch_Gif.gif">
     <img id = "door" draggable = "false" class = "interact" src = "images/door-close.png">
     <img id = "oval-vortex" draggable = "false" src = "images/oval-vortex.gif">
+    <div id= "DUNGEONS" class="dungeons"></div>
+    <div id= "AND" class="and"></div>
+    <div id= "DAVIDS" class="davids"></div>
     <!-- Dungeon: fun/aesthetic elements -->
     <img id = "paper1" draggable = "false" class = "interact" src = "icons/paper1.png">
     <img id = "paper2" draggable = "false" class = "interact" src = "icons/paper2.png">
     <img id = "lock"  draggable = "false" class = "interact" ondrop = "drop(event)" ondragover= "allowDrop(event)" src = "images/pixil-frame-0.png">
     <img id = "key"  ondragstart="drag(event)">
     <img id = "chest" draggable = "false" class = "interact" src = "images/chest.png">
+    <script>
+        function mbar (msg, css, div) {
+            // CREATE BAR
+            var bar = document.createElement("div");
+            bar.innerHTML = msg;
+            bar.classList.add(css);
+        
+            // APPEND TO CONTAINER
+            document.getElementById(div).appendChild(bar);
+        }
+        mbar("DUNGEONS", "dungeons", "DUNGEONS");
+        mbar("AND", "and", "AND")
+        mbar("DAVIDS", "davids", "DAVIDS")
+    </script>
     <script src = "bundle.js"></script>
 </body>
 </html>
