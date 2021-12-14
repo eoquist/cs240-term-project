@@ -10,31 +10,6 @@ async function beginning(){
 
 beginning();
 
- // taken from https://www.sitepoint.com/create-one-time-events-javascript/
- function onetime(node, type, srcToSwap) { // create a one-time event
-     node.addEventListener(type, function(e) { // create event
-         e.target.src = srcToSwap;
-         e.target.removeEventListener(e.type, arguments.callee); // remove event
-     });
- }
- 
- function onetimeClickSwap(node, srcToSwap) {
-    node.addEventListener("click", function(e) { // create event
-        e.target.src = srcToSwap;
-        e.target.removeEventListener("click", arguments.callee); // remove event
-    });
- }
- function clickSwap(node, src1, src2) {
-    node.addEventListener("click", function(e){
-        if(node.getAttribute("src") == src1){
-            node.src = src2; 
-        }
-        else{
-            node.src = src1;
-        }
-    }
-    )}
-
 
 // MESSAGE BAR
 async function mbar (msg, css, div, delay1,delay2) {
@@ -115,9 +90,9 @@ async function mbar (msg, css, div, delay1,delay2) {
     var timeLeft = 30;
     var timerId = setInterval(countdown, 1000);
     function countdown() {
-        if (timeLeft <= 0) {
+        if (timeLeft == 0 && score > 0) {
             clearTimeout(timerId);
-            window.location = "https://www.youtube.com/watch?v=fUXtjdMWUHM";
+            window.location = "https://www.youtube.com/embed/fUXtjdMWUHM?autoplay=1";
         } else {
           timer.innerHTML = timeLeft + ' seconds remaining';
           timeLeft--;
@@ -125,12 +100,18 @@ async function mbar (msg, css, div, delay1,delay2) {
     }
     table.appendChild(timer);
 
-    var key = document.createElement('img');
+    var key = document.getElementById('key');
     key.src = "images/key.png";
-    key.id = "key";
     key.class = "interact";
     key.draggable = "true";
-    key.ondragstart = DragEvent;
+    var puz1 = document.createElement('img');
+    puz1.setAttribute("draggable",false);
+    puz1.id = "puzzleL";
+    puz1.src = "icons/puzzle-piece1.png";
+    var puz2 = document.createElement('img');
+    puz2.setAttribute("draggable",false);
+    puz2.id = "puzzleR";
+    puz2.src = "icons/puzzle-piece2.png";
 
     input.addEventListener("keydown", async function(evt){
         // need to check if the return key was depressed
@@ -139,30 +120,36 @@ async function mbar (msg, css, div, delay1,delay2) {
             if(randNum == 0){ // if it's an addition problem
                 var theA = first + sec;
                 if(input.value == theA){
+                    var correct_ans = new Audio("sfx/8bit-SFX-Library/Win/win-8.wav").play();
                     await mbar('Correct!','mbar','mbar',0,1700);
                     score--;
                     numQ.innerHTML = "You have " + score + " questions left";
                 }else{
+                    var wrong_ans = new Audio("sfx/8bit-SFX-Library/Lose/lose-6.wav").play();
                     await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
             if(randNum == 1){ // if it's a subtraction problem
                 var theA = first - sec;
                 if(input.value == theA){
+                    var correct_ans = new Audio("sfx/8bit-SFX-Library/Win/win-8.wav").play();
                     await mbar('Correct!','mbar','mbar',0,1700);
                     score--;
                     numQ.innerHTML = "You have " + score + " questions left";
                 }else{
+                    var wrong_ans = new Audio("sfx/8bit-SFX-Library/Lose/lose-6.wav").play();
                     await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
             if(randNum == 2){ // if it's a multiplication problem
                 var theA = first * sec;
                 if(input.value == theA){
+                    var correct_ans = new Audio("sfx/8bit-SFX-Library/Win/win-8.wav").play();
                     await mbar('Correct!','mbar','mbar',0,1700);
                     score--;
                     numQ.innerHTML = "You have " + score + " questions left";
                 }else{
+                    var wrong_ans = new Audio("sfx/8bit-SFX-Library/Lose/lose-6.wav").play();
                     await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
@@ -179,6 +166,8 @@ async function mbar (msg, css, div, delay1,delay2) {
                 await mbar('WAIT! I see something!!!','mbar','mbar',3000,2000);
                 let body = document.querySelector("body");
                 body.appendChild(key);
+                body.appendChild(puz1);
+                body.appendChild(puz2);
             }
             // clear out the input field
             this.value = "";
