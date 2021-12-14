@@ -2,23 +2,42 @@
 var problems = require('maths-problems');
 var node = document.getElementById("chest");
 
+function mesBar (msg, css, div) {
+    // CREATE BAR
+    var button = document.createElement("button");
+    var theBar = document.createElement("div");
+    theBar.innerHTML = msg;
+    theBar.classList.add(div);
+    if (css) { theBar.classList.add(css); }
+    button.innerHTML = "next";
+    button.classList.add("button");
+    theBar.appendChild(button);
 
-async function beginning(){
-    await mbar('Hahahaha! You\'ve fallen into my trap! If you\'re smart enough, you will be able to leave this room. BUT I don\'t think you are...','beginning','beginning-remarks',0,7000);
-    await mbar('Try your best to figure out how to leave this room!','beginning','beginning-remarks',7000,5000);
-}
+    // APPEND TO CONTAINER
+    document.getElementById(div).appendChild(theBar);
+    button.addEventListener("click", function(){
+        if(theBar.innerHTML = "Hahahaha! You\'ve fallen into my trap! If you\'re smart enough, you will be able to leave this room. BUT I don\'t think you are..."){
+            theBar.innerHTML = "Try your best to figure out how to leave this room!";
+            theBar.appendChild(button);
+            button.addEventListener("click", function(){
+                if(theBar.innerHTML = "Try your best to figure out how to leave this room!"){
+                    theBar.parentNode.removeChild(theBar);
+                }
+            });
+        }
+    });
+  }
+mesBar('Hahahaha! You\'ve fallen into my trap! If you\'re smart enough, you will be able to leave this room. BUT I don\'t think you are...','beginning','beginning-remarks');
 
-beginning();
-
- // taken from https://www.sitepoint.com/create-one-time-events-javascript/
- function onetime(node, type, srcToSwap) { // create a one-time event
+// taken from https://www.sitepoint.com/create-one-time-events-javascript/
+function onetime(node, type, srcToSwap) { // create a one-time event
      node.addEventListener(type, function(e) { // create event
          e.target.src = srcToSwap;
          e.target.removeEventListener(e.type, arguments.callee); // remove event
      });
- }
+}
  
- function onetimeClickSwap(node, srcToSwap) {
+function onetimeClickSwap(node, srcToSwap) {
     node.addEventListener("click", function(e) { // create event
         e.target.src = srcToSwap;
         e.target.removeEventListener("click", arguments.callee); // remove event

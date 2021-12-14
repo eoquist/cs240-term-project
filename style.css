@@ -162,3 +162,11 @@ body {
   text-shadow: 0 0 8px #000;
   font-size: 10px;
 }
+button {
+  font-family: theFont;
+  background-color: #eee;
+  color: #aaa;
+  border: 1px solid #aaa;
+  font-size: 20px;
+  left: 30px;
+}
