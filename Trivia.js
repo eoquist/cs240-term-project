@@ -126,7 +126,7 @@ async function wrongAns(){
     var wrong_ans = new Audio("sfx/Old Man Sound Effects/Ouch 1.wav").play();
     if(hitPoints == 0){
          await message_bar("hahahah! you've died", "mbar", 0, 1700);
-         location.pathname = "lose.html";
+         location.pathname = "C:/Users/12064/Documents/0SoftEng/cs240-term-project/lose.html";
     }
      
 }
@@ -146,13 +146,13 @@ async function rightAns(){
     else if (rounds == questionNum) {
         await message_bar("You've Won!", "mbar", 0, 1700);
         var game_won = new Audio("sfx/Old Man Sound Effects/You Did It 1.wav").play();
-        location.pathname = "win.html";
+        location.pathname = "C:/Users/12064/Documents/0SoftEng/cs240-term-project/win.html";
     };
     
 }
  if (hitPoints == 0) {
      await message_bar("You've Died!", "mbar", 0, 1700);
-     location.pathname = "lose.html";
+     location.pathname = "C:/Users/12064/Documents/0SoftEng/cs240-term-project/lose.html";
     }
 
 }
