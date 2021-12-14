@@ -10,6 +10,31 @@ async function beginning(){
 
 beginning();
 
+ // taken from https://www.sitepoint.com/create-one-time-events-javascript/
+ function onetime(node, type, srcToSwap) { // create a one-time event
+     node.addEventListener(type, function(e) { // create event
+         e.target.src = srcToSwap;
+         e.target.removeEventListener(e.type, arguments.callee); // remove event
+     });
+ }
+ 
+ function onetimeClickSwap(node, srcToSwap) {
+    node.addEventListener("click", function(e) { // create event
+        e.target.src = srcToSwap;
+        e.target.removeEventListener("click", arguments.callee); // remove event
+    });
+ }
+ function clickSwap(node, src1, src2) {
+    node.addEventListener("click", function(e){
+        if(node.getAttribute("src") == src1){
+            node.src = src2; 
+        }
+        else{
+            node.src = src1;
+        }
+    }
+    )}
+
 
 // MESSAGE BAR
 async function mbar (msg, css, div, delay1,delay2) {
