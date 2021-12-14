@@ -89,24 +89,24 @@ body {
 #key {
   position: absolute;
   left: 1050px;
-  top: 570px;
+  top: 590px;
   width: 50px;
   height: 50px;
   transform: rotate(70deg);
 }
 #puzzleL {
   position: absolute;
-  top: 750px;
-  left: 1100px;
-  width: 100px;
-  height: 100px;
+  top: 590px;
+  left: 1015px;
+  width: 50px;
+  height: 50px;
 }
 #puzzleR {
   position: absolute;
-  top: 750px;
-  left: 100px;
-  width: 100px;
-  height: 100px;
+  top: 590px;
+  left: 1105px;
+  width: 50px;
+  height: 50px;
   transform: rotate(67deg);
 }
 #paper1 {
