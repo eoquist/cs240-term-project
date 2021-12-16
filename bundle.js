@@ -2,6 +2,12 @@
 var problems = require('maths-problems');
 var node = document.getElementById("chest");
 
+/**
+ * This function creates a message bar that contains the beginning messages of the game. 
+ * @param {String} msg The message to be displayed on the screen
+ * @param {String} css The css class element for the message
+ * @param {String} div The div to attach the message bar to
+ */
 function mesBar (msg, css, div) {
     // CREATE BAR
     var button = document.createElement("button");
@@ -29,33 +35,16 @@ function mesBar (msg, css, div) {
   }
 mesBar('Hahahaha! You\'ve fallen into my trap! If you\'re smart enough, you will be able to leave this room. BUT I don\'t think you are...','beginning','beginning-remarks');
 
-// taken from https://www.sitepoint.com/create-one-time-events-javascript/
-function onetime(node, type, srcToSwap) { // create a one-time event
-     node.addEventListener(type, function(e) { // create event
-         e.target.src = srcToSwap;
-         e.target.removeEventListener(e.type, arguments.callee); // remove event
-     });
-}
- 
-function onetimeClickSwap(node, srcToSwap) {
-    node.addEventListener("click", function(e) { // create event
-        e.target.src = srcToSwap;
-        e.target.removeEventListener("click", arguments.callee); // remove event
-    });
- }
- function clickSwap(node, src1, src2) {
-    node.addEventListener("click", function(e){
-        if(node.getAttribute("src") == src1){
-            node.src = src2; 
-        }
-        else{
-            node.src = src1;
-        }
-    }
-    )}
-
-
-// MESSAGE BAR
+/**
+ * This function creates a Promise that creates a message bar after delay1 amount of
+ * milliseconds, and then deletes it after delay2 amount of milliseconds
+ * @param {String} msg The message to be displayed
+ * @param {String} css The css class element for the message
+ * @param {String} div The div to attach the message bar to
+ * @param {Int} delay1 The delay before the message appears
+ * @param {Int} delay2 The delay before the message is deleted
+ * @returns The Promise to create a message bar
+ */
 async function mbar (msg, css, div, delay1,delay2) {
     return new Promise((resolve) => {
         setTimeout(async () => {
@@ -73,7 +62,13 @@ async function mbar (msg, css, div, delay1,delay2) {
     });
   }
 
-  // REMOVE BAR
+/**
+ * This function creates a Promise to delete the message bar
+ * @param {String} bar The bar to be removed
+ * @param {String} div The div element that contains the bar
+ * @param {Int} delay The amount of time the Promise should be delayed before the bar is removed
+ * @returns The Promise to remove the message bar
+ */
   function remBar(bar,div,delay){
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -83,7 +78,16 @@ async function mbar (msg, css, div, delay1,delay2) {
     });
   }
 
-  function mathGame(css){
+/**
+ * This function creates the math game. This function creates a div that holds the math game and 
+ * uses the maths-problems API to generate random math equations. They must finish a total of 10
+ * math equations within 30 seconds or else the user will be sent to a Youtube video of an 
+ * explosion.
+ * @param {String} css The css element to connect the table to
+ */
+function mathGame(css){
+
+    // CREATE MATH EQUATIONS
     var addProblem = {
         "question" : "What is {x=randomInt(1,15)} + {y=randomInt(1,15)}?",
         "answer" : ["{x}+{y}"],
@@ -99,7 +103,8 @@ async function mbar (msg, css, div, delay1,delay2) {
         "answer" : ["{x}*{y}"],
         "answerFormat" : "0"
     };
-    // Generate an addition, subtraction, & a multiplication problem
+
+    // GENERATE AN ADDITION, SUBTRACTION, & MULTIPLICATION PROBLEM
     var questions = problems.generateQuestions([addProblem, subProblem, multProblem], [1,1,1]);
     console.log(questions);
 
@@ -127,12 +132,20 @@ async function mbar (msg, css, div, delay1,delay2) {
     table.appendChild(input);
     input.placeholder = "Input your answer here";
     var numQ = document.createElement("tr");
+<<<<<<< HEAD
     var score = 10;
+=======
+    var score = 10; // THE AMOUNT OF QUESTIONS TO BE ANSWERED
+>>>>>>> e18629e (commented elements.js and index.html & deleted unnecessary files - potionroom and header files)
     numQ.innerHTML = "You have " + score + " questions left";
     table.appendChild(numQ);
     var timer = document.createElement('tr');
     var timeLeft = 30;
     var timerId = setInterval(countdown, 1000);
+    /**
+     * This function creates a timer that counts down, and when it reaches 0, it sends the user
+     * to a Youtube video of an explosion
+     */
     function countdown() {
         if (timeLeft == 0 && score > 0) {
             clearTimeout(timerId);
@@ -144,6 +157,7 @@ async function mbar (msg, css, div, delay1,delay2) {
     }
     table.appendChild(timer);
 
+    // CREATED THE KEY IMG ELEMENT
     var key = document.getElementById('key');
     key.src = "images/key.png";
     key.class = "interact";
@@ -157,11 +171,14 @@ async function mbar (msg, css, div, delay1,delay2) {
     puz2.id = "puzzleR";
     puz2.src = "icons/puzzle-piece2.png";
 
+    /**
+     * This event listener checks to see if the player's input was correct
+     */
     input.addEventListener("keydown", async function(evt){
-        // need to check if the return key was depressed
+        // NEED TO CHECK IF RETURN KEY IS PRESSED
         if (evt.code === "Enter" && input.value !== "") {
-            // check if the answer was correct
-            if(randNum == 0){ // if it's an addition problem
+            // CHECK IF ANSWER IS CORRECT
+            if(randNum == 0){ // IF IT'S AN ADDITION PROBLEM
                 var theA = first + sec;
                 if(input.value == theA){
                     var correct_ans = new Audio("sfx/8bit-SFX-Library/Win/win-8.wav").play();
@@ -173,7 +190,7 @@ async function mbar (msg, css, div, delay1,delay2) {
                     await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
-            if(randNum == 1){ // if it's a subtraction problem
+            if(randNum == 1){ // IF IT'S A SUBTRACTION PROBLEM
                 var theA = first - sec;
                 if(input.value == theA){
                     var correct_ans = new Audio("sfx/8bit-SFX-Library/Win/win-8.wav").play();
@@ -185,7 +202,7 @@ async function mbar (msg, css, div, delay1,delay2) {
                     await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
-            if(randNum == 2){ // if it's a multiplication problem
+            if(randNum == 2){ // IF IT'S A MULTIPLICATION PROBLEM
                 var theA = first * sec;
                 if(input.value == theA){
                     var correct_ans = new Audio("sfx/8bit-SFX-Library/Win/win-8.wav").play();
@@ -197,6 +214,7 @@ async function mbar (msg, css, div, delay1,delay2) {
                     await mbar('Incorrect!','mbar','mbar',0,1700);
                 }
             }
+            // IF SCORE IS 0, THEN REMOVE THE MATH GAME DIV AND OPEN THE TREASURE CHEST AND ALLOW PLAYER TO GET KEY
             if(score == 0){
                 table.parentNode.removeChild(table);
                 playing = false;
@@ -213,7 +231,7 @@ async function mbar (msg, css, div, delay1,delay2) {
                 body.appendChild(puz1);
                 body.appendChild(puz2);
             }
-            // clear out the input field
+            // CLEAR OUT INPUT FIELD
             this.value = "";
             questions = problems.generateQuestions([addProblem, subProblem, multProblem], [1,1,1]);
             randNum = Math.floor(Math.random() * 2);
@@ -226,12 +244,17 @@ async function mbar (msg, css, div, delay1,delay2) {
     table.classList.add("math-game");
     if (css) { table.classList.add(css); }
 
-    // (B3) APPEND TO CONTAINER
+    // APPEND TO CONTAINER
     document.getElementById("math-game").appendChild(table);
-  }
-  var playing = false;
-  var finished = false;
+}
 
+var playing = false; // CHECK IF PLAYER IS PLAYING
+var finished = false; // CHECK IF PLAYER IS FINISHED
+
+/**
+ * This event listener checks to make sure the player is not already playing the math game and is not
+ * already finished with the math game to be able to play the math game when the treasure chest is clicked
+ */
 let chest = document.getElementById("chest");
 chest.addEventListener("click", async function(){
     if(!playing && !finished){

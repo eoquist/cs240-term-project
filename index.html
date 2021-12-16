@@ -3,6 +3,11 @@
     <link rel = "stylesheet" href = "style.css">
     <script>
         var body = document.querySelector('body');
+        /**
+         * This function changes the screen to the trivia.html page
+         * @param delay The delay to resolve the Promise
+         * @returns the Promise of changing the screen
+        */
         function changeScr(delay){
             return new Promise((resolve) => {
                 setTimeout(() => {
@@ -12,13 +17,23 @@
                 }, delay);
             });
         }
+        /**
+         * This function allows for ev to dropped
+        */
         function allowDrop(ev) {
             ev.preventDefault();
         }
+
+        /**
+         * This function allows for ev to be dragged
+        */
         function drag(ev) {
             ev.dataTransfer.setData("text", ev.target.id);
         }
         
+        /**
+         * This function opens the lock and the door
+        */
         async function drop(ev) {
             ev.preventDefault();
             document.querySelector("#lock").src = "images/open-lock.png";
@@ -33,6 +48,13 @@
             node.style.setProperty("top","192.5px");
             await changeScr(4000);
         }
+
+        /**
+         * This function removes an image
+         * @param ele The image to be removed
+         * @param delay The delay before the image is removed
+         * @returns the Promise of the image being removed
+        */
         function removeImg(ele, delay){
             return new Promise((resolve) => {
                 setTimeout(() => {
