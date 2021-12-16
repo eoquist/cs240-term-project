@@ -132,11 +132,7 @@ function mathGame(css){
     table.appendChild(input);
     input.placeholder = "Input your answer here";
     var numQ = document.createElement("tr");
-<<<<<<< HEAD
-    var score = 10;
-=======
     var score = 10; // THE AMOUNT OF QUESTIONS TO BE ANSWERED
->>>>>>> e18629e (commented elements.js and index.html & deleted unnecessary files - potionroom and header files)
     numQ.innerHTML = "You have " + score + " questions left";
     table.appendChild(numQ);
     var timer = document.createElement('tr');
