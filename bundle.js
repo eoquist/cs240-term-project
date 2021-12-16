@@ -127,7 +127,7 @@ async function mbar (msg, css, div, delay1,delay2) {
     table.appendChild(input);
     input.placeholder = "Input your answer here";
     var numQ = document.createElement("tr");
-    var score = 1;
+    var score = 10;
     numQ.innerHTML = "You have " + score + " questions left";
     table.appendChild(numQ);
     var timer = document.createElement('tr');

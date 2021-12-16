@@ -8,7 +8,7 @@
                 setTimeout(() => {
                     console.log("switch pages");
                     location.pathname = "trivia.html";
-                    resolve(); // promise is resolvedxf
+                    resolve(); // promise is resolved
                 }, delay);
             });
         }
@@ -93,12 +93,9 @@
     <img id = "chest" draggable = "false" class = "interact" src = "images/chest.png">
     <script>
         function mbar (msg, css, div) {
-            // CREATE BAR
             var bar = document.createElement("div");
             bar.innerHTML = msg;
             bar.classList.add(css);
-        
-            // APPEND TO CONTAINER
             document.getElementById(div).appendChild(bar);
         }
         mbar("DUNGEONS", "dungeons", "DUNGEONS");
